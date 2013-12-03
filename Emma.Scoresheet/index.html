@@ -24,10 +24,11 @@
 
             <form name="scoresheetForm" class="form-horizontal">
                 <div data-ng-repeat="formGroup in scoresheet.formGroups" class="form-group">
+                    <h3 data-ng-if="formGroup.title">{{formGroup.title}}</h3>
                     <div data-ng-repeat="input in formGroup.inputs">
                         <label for="{{input.name}}">{{input.title}}</label>
-                        <input data-ng-if="input.type !== 'select'" name="{{input.name}}" type="{{input.type}}" class="form-control" data-ng-model="input.value" data-ng-pattern="input.validationPattern" />
-                        <select data-ng-if="input.type === 'select'" name="{{input.name}}" class="form-control" data-ng-model="input.value">
+                        <input data-ng-if="input.type !== 'select'" name="{{input.name}}" type="{{input.type}}" class="form-control" data-ng-value="input.value" data-ng-pattern="input.validationPattern" />
+                        <select data-ng-if="input.type === 'select'" name="{{input.name}}" class="form-control" data-ng-value="input.value">
                             <option data-ng-repeat="option in input.options" value="$index">{{option}}</option>
                         </select>
                         <div class="alert alert-warning" data-ng-show="scoresheetForm.{{input.name}}.$error">{{input.errorMessage}}</div>
@@ -45,8 +46,10 @@
         </div>
     </div>
 
+
     <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.0/lodash.min.js"></script>
     <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.js"></script>
+    <script src="lib/dateHelper.js"></script>
     <script src="app/appModule.js"></script>
     <script src="app/appCtrl.js"></script>
     <script src="app/scoresheet/scoresheetFactory.js"></script>

@@ -53,6 +53,7 @@
       <DependentUpon>style.less</DependentUpon>
     </Content>
     <Content Include="index.html" />
+    <Content Include="lib\dateHelper.js" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="web.config" />

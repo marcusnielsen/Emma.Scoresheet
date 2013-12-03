@@ -12,7 +12,7 @@
                     name: 'registrationNumber',
                     title: 'Reg.No.',
                     type: 'text',
-                    value: 'ABC123', // TODO: Make it work, then remove.
+                    value: '',
                     validationPattern: (/ /),
                     errorMessage: 'Invalid.'
                 }
@@ -92,7 +92,7 @@
                      name: 'date',
                      title: 'Date',
                      type: 'date',
-                     value: new Date().toISOString(), // TODO: Make it work!
+                     value: new Date().yyyymmdd(),
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
@@ -104,18 +104,35 @@
                      name: 'category',
                      title: 'Category',
                      type: 'select',
-                     value: '0', // TODO: Make it work!
+                     value: '0',
                      options: [
-                         'Advanced &euro; 4000',
+                         'Advanced € 4000',
                          'Advanced Unlimited',
-                         'Master &euro; 4000',
+                         'Master € 4000',
                          'Master OEM',
                          'Master 6 channel',
                          'Master Unlimited'
                      ]
                  }
              ]
-         }
+         },
+          {
+              title: 'Channel check',
+              inputs: [
+                  {
+                      name: 'channelCheckInput',
+                      title: 'Input',
+                      type: 'text',
+                      value: '',
+                  },
+                  {
+                      name: 'channelCheckOutput',
+                      title: 'Output',
+                      type: 'text',
+                      value: '',
+                  }
+              ]
+          }
     ];
 
     return publicObj;
