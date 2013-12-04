@@ -1,8 +1,16 @@
 ﻿appModule.factory('scoresheetFactory', [function () {
     var publicObj = {};
 
-    publicObj.getInput = function (index) {
-        return publicObj.formGroups
+    publicObj.getInputColWidth = function (formGroup) {
+        var itemCount = formGroup.inputs.length;
+
+        var colsPerItem = 12 / itemCount;
+
+        if (colsPerItem < 3) {
+            return 12;
+        }
+
+        return Math.floor(colsPerItem);
     };
 
     publicObj.formGroups = [

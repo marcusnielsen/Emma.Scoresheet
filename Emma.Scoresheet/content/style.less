@@ -10,6 +10,10 @@ body, h1, h2, h3, h4, h5, h6 {
     font-family: "Open Sans", Helvetica, Arial, sans-serif;
 }
 
+[ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+    display: none !important;
+}
+
 .wrapper {
     min-height: 100%;
     height: auto !important;
@@ -47,7 +51,7 @@ body, h1, h2, h3, h4, h5, h6 {
     }
 
     .glyphicon.third {
-         position: absolute;
+        position: absolute;
         top: 65px;
         left: 0;
         font-size: 38px;
@@ -56,5 +60,5 @@ body, h1, h2, h3, h4, h5, h6 {
 
 .page-header {
     color: @header-color;
-    font-weight:600;
+    font-weight: 600;
 }
