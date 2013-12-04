@@ -45,6 +45,7 @@
     <Content Include="appSpec\specRunner.html" />
     <Content Include="app\appCtrl.js" />
     <Content Include="app\appModule.js" />
+    <Content Include="app\ngSize\ngSize.js" />
     <Content Include="app\scoresheet\scoresheetFactory.js" />
     <Content Include="content\css\style.css" />
     <Content Include="content\css\style.min.css" />

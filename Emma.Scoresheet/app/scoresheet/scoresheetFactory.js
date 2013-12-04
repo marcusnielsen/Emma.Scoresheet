@@ -6,11 +6,17 @@
 
         var colsPerItem = 12 / itemCount;
 
-        if (colsPerItem < 3) {
-            return 12;
+        if (colsPerItem < 4) {
+            return 4;
         }
 
         return Math.floor(colsPerItem);
+    };
+
+    publicObj.getFormGroupScoreSum = function (formGroup) {
+        return _.reduce(formGroup.inputs, function (sum, input) {
+            return sum + (input.value !== '' ? input.value : 0);
+        }, 0);
     };
 
     publicObj.formGroups = [
@@ -139,6 +145,72 @@
                       type: 'text',
                       value: '',
                   }
+              ]
+          },
+          {
+              title: 'Presentation',
+              inputs: [
+                  {
+                      name: 'basicPresentationAndDocumentation',
+                      title: 'Basic presentation / documentation',
+                      type: 'select',
+                      value: '',
+                      options: [0, 1, 2, 3, 4, 5]
+                  },
+                  {
+                      name: 'presentationToThePublic',
+                      title: 'Presentation to the public',
+                      type: 'select',
+                      value: '',
+                      options: [0, 10]
+                  },
+                  {
+                      name: 'cleanliness',
+                      title: 'Cleanliness',
+                      type: 'select',
+                      value: '',
+                      options: [0, 1, 3, 5]
+                  }
+              ]
+          },
+          {
+              title: 'Cables',
+              inputs: [
+                  {
+                      name: 'powerWiresFusedProperly',
+                      title: 'Power wire(s) fused properly',
+                      type: 'select',
+                      value: '',
+                      options: [0, 10]
+                  },
+                  {
+                      name: 'cableProperlyTerminated',
+                      title: 'Cable properly terminated',
+                      type: 'select',
+                      value: '',
+                      options: [0, 5]
+                  },
+                  {
+                      name: 'allCableTerminationsProperlyProtected',
+                      title: 'All cable terminations properly protected',
+                      type: 'select',
+                      value: '',
+                      options: [0, 5]
+                  },
+                   {
+                       name: 'cablesProtectedFromDamage',
+                       title: 'Cables protected from damage',
+                       type: 'select',
+                       value: '',
+                       options: [0, 5]
+                   },
+                    {
+                        name: 'interiorCablesHiddenFromView',
+                        title: 'Interior cables hidden from view',
+                        type: 'select',
+                        value: '',
+                        options: [0, 1, 2, 3, 4, 5]
+                    }
               ]
           }
     ];
