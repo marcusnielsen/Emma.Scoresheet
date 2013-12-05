@@ -5,7 +5,7 @@
     <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
     <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" />
-    <link href="content/css/style.css" rel="stylesheet" />
+    <link href="content/css/style.min.css" rel="stylesheet" />
 </head>
 <body class="ng-cloak" data-ng-cloak="">
     <div class="wrapper">
@@ -24,6 +24,12 @@
 
         <div class="container">
             <h2>{{app.title}} <small>{{app.subTitle}}</small></h2>
+
+            <div data-mn-scoresheet="">
+
+            </div>
+
+
 
             <form name="scoresheetForm" class="form-horizontal">
                 <div data-ng-repeat="formGroup in scoresheet.formGroups" class="form-group">
