@@ -40,19 +40,19 @@ h6 {
   height: 100px;
   color: #ffd800;
 }
-.stars-container .glyphicon.first {
+.stars-container .first {
   position: absolute;
   top: 0;
   right: 0;
   font-size: 24px;
 }
-.stars-container .glyphicon.second {
+.stars-container .second {
   position: absolute;
   top: 30px;
   left: 10px;
   font-size: 28px;
 }
-.stars-container .glyphicon.third {
+.stars-container .third {
   position: absolute;
   top: 65px;
   left: 0;

@@ -46,15 +46,10 @@
     <Content Include="app\appCtrl.js" />
     <Content Include="app\appModule.js" />
     <Content Include="app\ngSize\ngSize.js" />
+    <Content Include="app\scoresheet\mnScoresheet.js" />
     <Content Include="app\scoresheet\scoresheetFactory.js" />
     <Content Include="content\css\style.css" />
     <Content Include="content\css\style.min.css" />
-    <Content Include="content\style.css">
-      <DependentUpon>style.less</DependentUpon>
-    </Content>
-    <Content Include="content\style.min.css">
-      <DependentUpon>style.less</DependentUpon>
-    </Content>
     <Content Include="index.html" />
     <Content Include="lib\dateHelper.js" />
   </ItemGroup>
