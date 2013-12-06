@@ -118,7 +118,7 @@
                      name: 'category',
                      title: 'Category',
                      type: 'select',
-                     value: '0',
+                     value: 'Advanced € 4000',
                      options: [
                          'Advanced € 4000',
                          'Advanced Unlimited',
