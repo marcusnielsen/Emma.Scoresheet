@@ -1,6 +1,6 @@
 ﻿var appCtrl = function ($scope, scoresheetFactory) {
     $scope.app = {
-        title: 'EMMA Scoresheet',
+        title: 'EMMA Scoresheet TESTING',
         subTitle: 'SQ Advanced / Master',
         heading: 'EMMA',
         subHeading: 'european mobile media association',
