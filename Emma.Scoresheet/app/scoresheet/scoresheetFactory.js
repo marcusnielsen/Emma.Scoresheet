@@ -86,7 +86,7 @@
                      name: 'andOr',
                      title: 'and/or',
                      type: 'text',
-                     value: 'TODO: Remove',
+                     value: 'TODO:Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
