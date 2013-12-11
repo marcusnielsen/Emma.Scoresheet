@@ -35,11 +35,10 @@
                     <h3 data-ng-if="formGroup.title">{{formGroup.title}} <span class="text-warning" data-ng-if="formGroup.inputs[0].type === 'select'">{{scoresheet.getFormGroupScoreSum(formGroup)}}</span></h3>
                     <div class="col-sm-{{scoresheet.getInputColWidth($parent.formGroup)}}" data-ng-repeat="input in formGroup.inputs">
                         <ng-form name="innerForm">
-                            <label for="{{input.name}}">{{input.title}}</label>
-                            <input data-ng-if="input.type !== 'select' && input.type !== 'radio'" name="input" data-ng-attr-type="{{input.type}}" class="form-control" data-ng-value="input.value" data-ng-pattern="input.validationPattern" required />
-                            <select data-ng-if="input.type === 'select'" name="{{input.name}}" class="form-control" data-ng-model="$parent.formGroup.inputs[$index].value" data-ng-options="option as option for option in input.options" data-ng-attr-size="{{input.options.length}}"></select>
-                            <div class="alert alert-warning" data-ng-show="scoresheetForm.innerForm.input.$error.required">Required</div>
-                            {{scoresheetForm.innerForm.input}}
+                            <label for="innerInput">{{input.title}}</label>
+                            <input data-ng-if="input.type !== 'select'" name="innerInput" data-ng-attr-type="{{input.type}}" class="form-control" data-ng-model="input.value" data-ng-pattern="input.validationPattern" required />
+                            <select data-ng-if="input.type === 'select'" name="innerInput" class="form-control" data-ng-model="input.value" data-ng-options="option for option in input.options" data-ng-attr-size="{{input.options.length}}"></select>
+                            <div class="alert alert-warning" data-ng-show="input.$invalid">Required</div>
                         </ng-form>
                     </div>
                 </div>

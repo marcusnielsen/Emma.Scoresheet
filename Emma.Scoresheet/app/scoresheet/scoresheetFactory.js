@@ -26,7 +26,7 @@
                     name: 'registrationNumber',
                     title: 'Reg.No.',
                     type: 'text',
-                    value: '',
+                    value: 'TODO: ABC-123',
                     validationPattern: (/ /),
                     errorMessage: 'Invalid.'
                 }
@@ -38,7 +38,7 @@
                      name: 'name',
                      title: 'Name',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
@@ -50,7 +50,7 @@
                      name: 'vehicle',
                      title: 'Vehicle',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  },
@@ -58,7 +58,7 @@
                      name: 'type',
                      title: 'Type',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  },
@@ -66,7 +66,7 @@
                      name: 'color',
                      title: 'Colour',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
@@ -78,7 +78,7 @@
                      name: 'licensePlate',
                      title: 'License plate',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  },
@@ -86,7 +86,7 @@
                      name: 'andOr',
                      title: 'and/or',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
@@ -98,15 +98,15 @@
                      name: 'competition',
                      title: 'Competition',
                      type: 'text',
-                     value: '',
+                     value: 'TODO: Remove',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  },
                  {
                      name: 'date',
                      title: 'Date',
-                     type: 'date',
-                     value: new Date().yyyymmdd(),
+                     type: 'text', // TODO: Set to date or remove this comment.
+                     value: new Date().yyyymmdd() + ' ',
                      validationPattern: (/ /),
                      errorMessage: 'Invalid.'
                  }
@@ -138,12 +138,16 @@
                       title: 'Input',
                       type: 'text',
                       value: '',
+                      validationPattern: (/ /),
+                      errorMessage: 'Invalid.'
                   },
                   {
                       name: 'channelCheckOutput',
                       title: 'Output',
                       type: 'text',
                       value: '',
+                      validationPattern: (/ /),
+                      errorMessage: 'Invalid.'
                   }
               ]
           },
