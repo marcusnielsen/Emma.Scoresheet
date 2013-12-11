@@ -27,7 +27,7 @@
                     title: 'Reg.No.',
                     type: 'text',
                     value: 'TODO: ABC-123',
-                    validationPattern: (/ /),
+                    validationPattern: (/(?:)/),
                     errorMessage: 'Invalid.'
                 }
             ]
@@ -39,7 +39,7 @@
                      title: 'Name',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  }
              ]
@@ -51,7 +51,7 @@
                      title: 'Vehicle',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  },
                  {
@@ -59,7 +59,7 @@
                      title: 'Type',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  },
                  {
@@ -67,7 +67,7 @@
                      title: 'Colour',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  }
              ]
@@ -79,7 +79,7 @@
                      title: 'License plate',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  },
                  {
@@ -87,7 +87,7 @@
                      title: 'and/or',
                      type: 'text',
                      value: 'TODO:Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  }
              ]
@@ -99,15 +99,15 @@
                      title: 'Competition',
                      type: 'text',
                      value: 'TODO: Remove',
-                     validationPattern: (/ /),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  },
                  {
                      name: 'date',
                      title: 'Date',
-                     type: 'text', // TODO: Set to date or remove this comment.
-                     value: new Date().yyyymmdd() + ' ',
-                     validationPattern: (/ /),
+                     type: 'date',
+                     value: new Date().yyyymmdd(),
+                     validationPattern: (/(?:)/),
                      errorMessage: 'Invalid.'
                  }
              ]
@@ -138,7 +138,7 @@
                       title: 'Input',
                       type: 'text',
                       value: '',
-                      validationPattern: (/ /),
+                      validationPattern: (/(?:)/),
                       errorMessage: 'Invalid.'
                   },
                   {
@@ -146,7 +146,7 @@
                       title: 'Output',
                       type: 'text',
                       value: '',
-                      validationPattern: (/ /),
+                      validationPattern: (/(?:)/),
                       errorMessage: 'Invalid.'
                   }
               ]
