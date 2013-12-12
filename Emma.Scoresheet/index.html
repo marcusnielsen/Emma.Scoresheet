@@ -2,6 +2,8 @@
 <html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="appModule" data-ng-controller="appCtrl">
 <head>
     <title>{{app.title}}</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <link href="http://bootswatch.com/readable/bootstrap.min.css" rel="stylesheet" />
     <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
     <link href="http://cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" />
@@ -33,7 +35,7 @@
             <form name="scoresheetForm" class="form-horizontal">
                 <div data-ng-repeat="formGroup in scoresheet.formGroups" class="form-group">
                     <h3 data-ng-if="formGroup.title">{{formGroup.title}} <span class="text-warning" data-ng-if="formGroup.inputs[0].type === 'select'">{{scoresheet.getFormGroupScoreSum(formGroup)}}</span></h3>
-                    <div class="col-sm-{{scoresheet.getInputColWidth($parent.formGroup)}}" data-ng-repeat="input in formGroup.inputs">
+                    <div class="col-md-{{scoresheet.getInputColWidth($parent.formGroup)}}" data-ng-repeat="input in formGroup.inputs">
                         <ng-form name="innerForm">
                             <label for="innerInput">{{input.title}}</label>
                             <input data-ng-if="input.type !== 'select'" name="innerInput" data-ng-attr-type="{{input.type}}" class="form-control" data-ng-model="input.value" data-ng-pattern="input.validationPattern" required />
