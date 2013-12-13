@@ -70,7 +70,7 @@
                  {
                      title: 'Category',
                      type: 'select',
-                     value: '',
+                     selected: '',
                      options: [
                          'Advanced € 4000',
                          'Advanced Unlimited',
@@ -103,19 +103,19 @@
                   {
                       title: 'Basic presentation / documentation',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 1, 2, 3, 4, 5]
                   },
                   {
                       title: 'Presentation to the public',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 10]
                   },
                   {
                       title: 'Cleanliness',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 1, 3, 5]
                   }
               ]
@@ -126,31 +126,31 @@
                   {
                       title: 'Power wires fused properly',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 10]
                   },
                   {
                       title: 'Cable properly terminated',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 5]
                   },
                   {
                       title: 'All cable terminations properly protected',
                       type: 'select',
-                      value: '',
+                      selected: '',
                       options: [0, 5]
                   },
                    {
                        title: 'Cables protected from damage',
                        type: 'select',
-                       value: '',
+                       selected: '',
                        options: [0, 5]
                    },
                     {
                         title: 'Interior cables hidden from view',
                         type: 'select',
-                        value: '',
+                        selected: '',
                         options: [0, 1, 2, 3, 4, 5]
                     }
               ]

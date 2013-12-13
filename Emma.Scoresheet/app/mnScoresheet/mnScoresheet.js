@@ -20,7 +20,7 @@
 
             scope.getFormGroupScoreSum = function (formGroup) {
                 return _.reduce(formGroup.inputs, function (sum, input) {
-                    return sum + (input.value !== '' ? parseInt(input.value, 10) : 0);
+                    return sum + (input.selected !== '' ? parseInt(input.selected, 10) : 0);
                 }, 0);
             };
         },
