@@ -1,0 +1,7 @@
+﻿<div class="list-group">
+    <a href="javascript:;" data-ng-click="setSelectedOption($index)" class="list-group-item" data-ng-class="{'active': isSelectedOption($index)}" data-ng-repeat="option in input.options">
+        {{option}}
+    </a>
+</div>
+<!--TODO: Refactor-->
+<!--<select data-ng-if="input.type === 'select'" name="innerInput" class="form-control" data-ng-model="input.value" data-ng-options="option for option in input.options" data-ng-attr-size="{{input.options.length}}"></select>-->

@@ -1,6 +1,6 @@
 ﻿var appCtrl = function ($scope, scoresheetFactory) {
     $scope.app = {
-        title: 'EMMA Scoresheet TESTING',
+        title: 'EMMA Scoresheet',
         subTitle: 'SQ Advanced / Master',
         heading: 'EMMA',
         subHeading: 'european mobile media association',
@@ -8,4 +8,4 @@
     };
 
     $scope.scoresheet = scoresheetFactory;
-}
+};

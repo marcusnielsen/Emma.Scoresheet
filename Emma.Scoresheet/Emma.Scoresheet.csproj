@@ -46,18 +46,36 @@
     <Content Include="appSpec\specRunner.html" />
     <Content Include="app\appCtrl.js" />
     <Content Include="app\appModule.js" />
+    <Content Include="app\mnInput\mnInput.js" />
+    <Content Include="app\mnInput\mnInputTemplate.html" />
+    <Content Include="app\mnInput\templates\select.html" />
+    <Content Include="app\mnInput\templates\static.html" />
+    <Content Include="app\mnInput\templates\text.html" />
+    <Content Include="app\mnScoresheet\mnScoresheetTemplate.html" />
     <Content Include="app\ngSize\ngSize.js" />
-    <Content Include="app\scoresheet\mnScoresheet.js" />
-    <Content Include="app\scoresheet\scoresheetFactory.js" />
+    <Content Include="app\mnScoresheet\mnScoresheet.js" />
+    <Content Include="app\mnScoresheet\scoresheetFactory.js" />
     <Content Include="content\css\bootstrap.min.css" />
     <Content Include="content\css\style.css" />
     <Content Include="content\css\style.min.css" />
+    <Content Include="content\style.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
+    <Content Include="content\style.min.css">
+      <DependentUpon>style.less</DependentUpon>
+    </Content>
     <Content Include="index.html" />
     <Content Include="lib\dateHelper.js" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="lib\stringHelper.js" />
+    <Content Include="uiSpec\default.conf.js" />
+    <Content Include="uiSpec\selenium\chromedriver.exe" />
+    <Content Include="uiSpec\selenium\selenium-server-standalone-2.37.0.jar" />
+    <Content Include="uiSpec\spec\test.spec.js" />
     <Content Include="web.config" />
     <Content Include="content\style.less" />
+    <Content Include="uiSpec\selenium\chromedriver_2.7.zip" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>

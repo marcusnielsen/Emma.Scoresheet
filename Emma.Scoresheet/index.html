@@ -18,7 +18,7 @@
                     <span class="stars-container">
                         <span class="fa fa-star first"></span>
                         <span class="fa fa-star second"></span>
-                        <span class="fa fa-star glyphicon-star third"></span>
+                        <span class="fa fa-star third"></span>
                     </span>
                     {{app.heading}} <small>{{app.subHeading}}</small>
                 </h1>
@@ -29,25 +29,11 @@
             <h2>{{app.title}} <small>{{app.subTitle}}</small></h2>
 
             <!--TODO: Remove or implement-->
-            <!--            <div data-mn-scoresheet="">
+            <mn-scoresheet data-mn-scoresheet-model="scoresheet">
 
-            </div>-->
-
-            <form name="scoresheetForm" class="form-horizontal">
-                <div data-ng-repeat="formGroup in scoresheet.formGroups" class="form-group">
-                    <h3 data-ng-if="formGroup.title">{{formGroup.title}} <span class="text-warning" data-ng-if="formGroup.inputs[0].type === 'select'">{{scoresheet.getFormGroupScoreSum(formGroup)}}</span></h3>
-                    <div class="col-md-{{scoresheet.getInputColWidth($parent.formGroup)}}" data-ng-repeat="input in formGroup.inputs">
-                        <ng-form name="innerForm">
-                            <label for="innerInput">{{input.title}}</label>
-                            <input data-ng-if="input.type !== 'select'" name="innerInput" data-ng-attr-type="{{input.type}}" class="form-control" data-ng-model="input.value" data-ng-pattern="input.validationPattern" required />
-                            <select data-ng-if="input.type === 'select'" name="innerInput" class="form-control" data-ng-model="input.value" data-ng-options="option for option in input.options" data-ng-attr-size="{{input.options.length}}"></select>
-                            <div class="alert alert-warning" data-ng-show="input.$invalid">Required</div>
-                        </ng-form>
-                    </div>
-                </div>
-            </form>
+            </mn-scoresheet>
         </div>
-
+        <!--<mn-input data-input="scoresheet.formGroups[0].inputs[0]"></mn-input>-->
         <!--footer compability element-->
         <div class="push"></div>
     </div>
@@ -61,10 +47,13 @@
     <script src="//cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.0/lodash.min.js"></script>
     <script src="//ajax.googleapis.com/ajax/libs/angularjs/1.2.3/angular.js"></script>
     <script src="lib/dateHelper.js"></script>
+    <script src="lib/stringHelper.js"></script>
+
     <script src="app/appModule.js"></script>
-    <script src="app/scoresheet/mnScoresheet.js"></script>
+    <script src="app/mnScoresheet/scoresheetFactory.js"></script>
     <script src="app/ngSize/ngSize.js"></script>
+    <script src="app/mnInput/mnInput.js"></script>
+    <script src="app/mnScoresheet/mnScoresheet.js"></script>
     <script src="app/appCtrl.js"></script>
-    <script src="app/scoresheet/scoresheetFactory.js"></script>
 </body>
 </html>
