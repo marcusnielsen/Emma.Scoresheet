@@ -8,11 +8,23 @@
             };
 
             scope.setSelectedOption = function (optionIndex) {
-                scope.input.value = scope.input.options[optionIndex];
+                scope.input.selected = scope.input.options[optionIndex];
+            };
+
+            scope.clearSelected = function () {
+                scope.input.selected = '';
             };
 
             scope.isSelectedOption = function (optionIndex) {
-                return scope.input.value === scope.input.options[optionIndex];
+                if (_.isUndefined(scope.input.options[0].value)) {
+                    return scope.input.selected === scope.input.options[optionIndex];
+                }
+                
+                return scope.input.selected.value === scope.input.options[optionIndex].value;
+            };
+
+            scope.getOptionTitle = function (option) {
+                return _.isUndefined(option.title) ? option : option.title;
             };
         },
         templateUrl: "app/mnInput/mnInputTemplate.html"

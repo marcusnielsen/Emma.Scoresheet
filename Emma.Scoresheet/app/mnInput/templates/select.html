@@ -1,7 +1,8 @@
 ﻿<div class="list-group">
-    <a href="javascript:;" data-ng-click="setSelectedOption($index)" class="list-group-item" data-ng-class="{'active': isSelectedOption($index)}" data-ng-repeat="option in input.options">
-        {{option}}
+    <a data-ng-show="input.selected" href="javascript:;" data-ng-click="clearSelected()" class="list-group-item active">
+        {{getOptionTitle(input.selected)}}
+    </a>
+    <a data-ng-hide="input.selected" href="javascript:;" data-ng-click="setSelectedOption($index)" class="list-group-item" data-ng-class="{'active': isSelectedOption($index)}" data-ng-repeat="option in input.options">
+        {{getOptionTitle(option)}}
     </a>
 </div>
-<!--TODO: Refactor-->
-<!--<select data-ng-if="input.type === 'select'" name="innerInput" class="form-control" data-ng-model="input.value" data-ng-options="option for option in input.options" data-ng-attr-size="{{input.options.length}}"></select>-->

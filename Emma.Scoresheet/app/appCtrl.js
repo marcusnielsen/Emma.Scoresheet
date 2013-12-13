@@ -1,4 +1,4 @@
-﻿var appCtrl = function ($scope, scoresheetFactory) {
+﻿var appCtrl = function ($scope, scoresheetFactory, styleFactory) {
     $scope.app = {
         title: 'EMMA Scoresheet',
         subTitle: 'SQ Advanced / Master',
@@ -7,5 +7,6 @@
         footerLink: 'https://github.com/marcusnielsen/Emma.Scoresheet'
     };
 
-    $scope.scoresheet = scoresheetFactory;
+    $scope.style = styleFactory;
+    $scope.scoresheet = scoresheetFactory;   
 };

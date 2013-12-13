@@ -88,7 +88,7 @@
                   {
                       title: 'Input',
                       type: 'text',
-                      value: 'Soptify via USB.'
+                      value: 'Spotify via USB.'
                   },
                   {
                       title: 'Output',

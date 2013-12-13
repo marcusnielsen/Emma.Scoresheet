@@ -4,16 +4,23 @@
     <title>{{app.title}}</title>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <!-- Make http(s) agnostic or remove <link href="//bootswatch.com/readable/bootstrap.min.css" rel="stylesheet" />-->
-    <link href="content/css/bootstrap.min.css" rel="stylesheet" />
+    <link data-ng-href="{{style.themesInput.selected.value}}" type="text/css" rel="stylesheet" />
+    <!--<link href="content/css/bootstrap.min.css" rel="stylesheet" />-->
     <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
     <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" />
-    <link href="content/css/style.min.css" rel="stylesheet" />
+    <link href="content/style.min.css" rel="stylesheet" />
 </head>
 <body class="ng-cloak" data-ng-cloak="">
     <div class="wrapper">
         <div class="header">
             <div class="container">
+                <!--TODO: Implement or remove-->
+                <!--<div class="clearfix">
+                    <div class="pull-right btn btn-primary btn-sm">
+                        <span class="fa fa-bars"></span>
+                    </div>
+                </div>-->
+                <mn-input input=style.themesInput></mn-input>
                 <h1 class="page-header">
                     <span class="stars-container">
                         <span class="fa fa-star first"></span>
@@ -50,6 +57,7 @@
     <script src="lib/stringHelper.js"></script>
 
     <script src="app/appModule.js"></script>
+    <script src="app/style/styleFactory.js"></script>
     <script src="app/mnScoresheet/scoresheetFactory.js"></script>
     <script src="app/ngSize/ngSize.js"></script>
     <script src="app/mnInput/mnInput.js"></script>

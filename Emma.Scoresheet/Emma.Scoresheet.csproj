@@ -55,9 +55,8 @@
     <Content Include="app\ngSize\ngSize.js" />
     <Content Include="app\mnScoresheet\mnScoresheet.js" />
     <Content Include="app\mnScoresheet\scoresheetFactory.js" />
+    <Content Include="app\style\styleFactory.js" />
     <Content Include="content\css\bootstrap.min.css" />
-    <Content Include="content\css\style.css" />
-    <Content Include="content\css\style.min.css" />
     <Content Include="content\style.css">
       <DependentUpon>style.less</DependentUpon>
     </Content>
@@ -72,7 +71,7 @@
     <Content Include="uiSpec\default.conf.js" />
     <Content Include="uiSpec\selenium\chromedriver.exe" />
     <Content Include="uiSpec\selenium\selenium-server-standalone-2.37.0.jar" />
-    <Content Include="uiSpec\spec\test.spec.js" />
+    <Content Include="uiSpec\spec\app.spec.js" />
     <Content Include="web.config" />
     <Content Include="content\style.less" />
     <Content Include="uiSpec\selenium\chromedriver_2.7.zip" />
