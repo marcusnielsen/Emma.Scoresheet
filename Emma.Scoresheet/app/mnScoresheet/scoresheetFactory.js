@@ -101,7 +101,7 @@
               title: 'Presentation',
               inputs: [
                   {
-                      title: 'Basic presentation / documentation',
+                      title: 'Basic presentation and documentation',
                       type: 'select',
                       selected: '',
                       options: [0, 1, 2, 3, 4, 5]
