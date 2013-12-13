@@ -149,3 +149,6 @@ $RECYCLE.BIN/
 
 # Mac crap
 .DS_Store
+/Emma.Scoresheet/content/style.min.css
+/Emma.Scoresheet/content/style.css
+/Emma.Scoresheet/uiSpec/output/TEST-indexhtml.xml
