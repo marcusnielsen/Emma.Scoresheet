@@ -42,6 +42,7 @@
     <Folder Include="Properties\" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="appSpec\lib\dataHelper.spec.js" />
     <Content Include="appSpec\specRunner.html" />
     <Content Include="app\appCtrl.js" />
     <Content Include="app\appModule.js" />
