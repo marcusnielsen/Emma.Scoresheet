@@ -56,7 +56,13 @@
     <Content Include="app\mnScoresheet\mnScoresheet.js" />
     <Content Include="app\mnScoresheet\scoresheetFactory.js" />
     <Content Include="app\style\styleFactory.js" />
-    <Content Include="content\css\bootstrap.min.css" />
+    <Content Include="content\animate.min.css" />
+    <Content Include="content\animations.css">
+      <DependentUpon>animations.less</DependentUpon>
+    </Content>
+    <Content Include="content\animations.min.css">
+      <DependentUpon>animations.less</DependentUpon>
+    </Content>
     <Content Include="content\style.css">
       <DependentUpon>style.less</DependentUpon>
     </Content>
@@ -75,6 +81,7 @@
     <Content Include="web.config" />
     <Content Include="content\style.less" />
     <Content Include="uiSpec\selenium\chromedriver_2.7.zip" />
+    <Content Include="content\animations.less" />
     <None Include="web.Debug.config">
       <DependentUpon>web.config</DependentUpon>
     </None>
