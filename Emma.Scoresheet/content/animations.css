@@ -1,6 +1,6 @@
 ﻿div.ng-hide-remove,
 div.ng-hide-add {
-    display: block!important;
+    display: block !important;
 }
 
 span.ng-hide-remove,
@@ -55,4 +55,25 @@ span.ng-hide-add {
     -o-animation: fadeOutLeft 0.5s;
     -webkit-animation: fadeOutLeft 0.5s;
     animation: fadeOutLeft 0.5s;
+}
+
+.fa-star.first {
+    -moz-animation: fadeInRight 1s;
+    -o-animation: fadeInRight 1s;
+    -webkit-animation: fadeInRight 1s;
+    animation: fadeInRight 1s;
+}
+
+.fa-star.second {
+    -moz-animation: fadeInRight 2s;
+    -o-animation: fadeInRight 2s;
+    -webkit-animation: fadeInRight 2s;
+    animation: fadeInRight 2s;
+}
+
+.fa-star.third {
+    -moz-animation: fadeInRight 3s;
+    -o-animation: fadeInRight 3s;
+    -webkit-animation: fadeInRight 3s;
+    animation: fadeInRight 3s;
 }
