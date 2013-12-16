@@ -1,7 +1,8 @@
 ﻿<form name="{{mnScoresheetModel.title.camelize()}}" class="form-horizontal">
     <div data-ng-repeat="formGroup in mnScoresheetModel.formGroups" class="form-group">
-        <h3 data-ng-if="formGroup.title">{{formGroup.title}} <span class="text-warning" data-ng-if="formGroup.inputs[0].type === 'select'">{{getFormGroupScoreSum(formGroup)}}</span></h3>
-
+        <div class="col-xs-12">
+            <h3 data-ng-if="formGroup.title">{{formGroup.title}} <span class="text-warning" data-ng-if="formGroup.inputs[0].type === 'select'">{{getFormGroupScoreSum(formGroup)}}</span></h3>
+        </div>
         <div class="col-md-{{getInputColWidth($parent.formGroup)}}" data-ng-repeat="input in formGroup.inputs">
             <ng-form name="innerForm">
                 <mn-input data-input="input"></mn-input>
