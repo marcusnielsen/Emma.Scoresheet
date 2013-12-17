@@ -38,6 +38,6 @@
     it('should render the value "Test value"', function () {
         element = compile(outerElement)(scope);
         scope.$digest();
-        return expect(element.find('input').val()).toBe('Test value');
+        expect(element.find('input').val()).toBe('Test value');
     });
 });
