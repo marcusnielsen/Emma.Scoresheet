@@ -43,6 +43,7 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="appSpec\lib\dataHelper.spec.js" />
+    <Content Include="appSpec\mnInput\mnInput.spec.js" />
     <Content Include="appSpec\specRunner.html" />
     <Content Include="app\appCtrl.js" />
     <Content Include="app\appModule.js" />
@@ -78,6 +79,7 @@
     <Content Include="uiSpec\selenium\chromedriver.exe" />
     <Content Include="uiSpec\selenium\selenium-server-standalone-2.37.0.jar" />
     <Content Include="uiSpec\spec\app.spec.js" />
+    <Content Include="uiSpec\spec\mnInput\templates\templates.spec.js" />
     <Content Include="web.config" />
     <Content Include="content\style.less" />
     <Content Include="uiSpec\selenium\chromedriver_2.7.zip" />
