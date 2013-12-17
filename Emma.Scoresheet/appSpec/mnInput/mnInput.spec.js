@@ -17,21 +17,24 @@
             scope.dataModel = dataModel;
             compile = $compile;
 
-            var req = new XMLHttpRequest();
-            req.onload = function () {
-                $templateCache.put("app/mnInput/mnInputTemplate.html", this.responseText);
-            };
+            specHelper.loadTemplate("app/mnInput/mnInputTemplate.html", $templateCache);
+            specHelper.loadTemplate("app/mnInput/templates/text.html", $templateCache);
 
-            req.open("get", "../app/mnInput/mnInputTemplate.html", false);
-            req.send();
+            //var req = new XMLHttpRequest();
+            //req.onload = function () {
+            //    $templateCache.put("app/mnInput/mnInputTemplate.html", this.responseText);
+            //};
 
-            var req2 = new XMLHttpRequest();
-            req2.onload = function () {
-                $templateCache.put("app/mnInput/templates/text.html", this.responseText);
-            };
+            //req.open("get", "../app/mnInput/mnInputTemplate.html", false);
+            //req.send();
 
-            req2.open("get", "../app/mnInput/templates/text.html", false);
-            req2.send();
+            //var req2 = new XMLHttpRequest();
+            //req2.onload = function () {
+            //    $templateCache.put("app/mnInput/templates/text.html", this.responseText);
+            //};
+
+            //req2.open("get", "../app/mnInput/templates/text.html", false);
+            //req2.send();
         });
     });
 
