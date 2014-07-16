@@ -1,4 +1,5 @@
 'use strict';
+
 var config = require('./config/index');
 require('./components/mongodb')(config);
 var app = require('./components/express')(config);

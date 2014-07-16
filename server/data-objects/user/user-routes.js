@@ -1,3 +1,5 @@
+'use strict';
+
 module.exports = function (router, userRepository, isAuthenticated) {
     router.route('/users')
         .post(function (req, res) {
