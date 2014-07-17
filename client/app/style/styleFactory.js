@@ -1,4 +1,6 @@
-﻿appModule.factory('styleFactory', function ($http) {  
+﻿'use strict';
+
+appModule.factory('styleFactory', function ($http) {
 
     var publicObj = {};
 

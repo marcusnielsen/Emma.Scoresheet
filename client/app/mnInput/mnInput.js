@@ -1,4 +1,6 @@
-﻿appModule.directive('mnInput', function () {
+﻿'use strict';
+
+appModule.directive('mnInput', function () {
     return {
         restrict: 'E',
         scope: {'input': '='},

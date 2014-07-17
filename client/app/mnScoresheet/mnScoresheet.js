@@ -1,4 +1,6 @@
-﻿appModule
+﻿'use strict';
+
+appModule
 .directive('mnScoresheet', function () {
     return {
         restrict: 'E',

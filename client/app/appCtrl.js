@@ -1,4 +1,6 @@
-﻿var appCtrl = function ($scope, scoresheetFactory, styleFactory) {
+﻿'use strict';
+
+var appCtrl = function ($scope, scoresheetFactory, styleFactory) {
     $scope.app = {
         title: 'EMMA Scoresheet',
         subTitle: 'SQ Advanced / Master',

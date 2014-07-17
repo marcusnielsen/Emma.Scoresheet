@@ -4,8 +4,6 @@ module.exports = function (app) {
 
     var passport = require('passport');
     app.use(passport.initialize());
-// Load required packages
-    var passport = require('passport');
     var BasicStrategy = require('passport-http').BasicStrategy;
     // TODO: Use the repository layer.
     var User = require('../../data-objects/user/user-model')();

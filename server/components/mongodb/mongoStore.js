@@ -2,12 +2,12 @@
 
 module.exports = function (app, config) {
     var session = require('express-session');
-    var mongoStore = require('connect-mongo')(session);
+    var MongoStore = require('connect-mongo')(session);
 
     // Persist sessions with mongoStore
     app.use(session({
         secret: config.secrets.session,
-        store: new mongoStore({
+        store: new MongoStore({
             url: config.mongo.uri,
             collection: 'sessions'
         }, function () {

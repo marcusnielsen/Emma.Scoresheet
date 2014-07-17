@@ -27,8 +27,7 @@ module.exports = function(config) {
     // require('../mongodb/mongoStore')(app, config);
 
     //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
-    //TODO: Make the static folder the dist folder when implementing gulp + browserify/watchify.
-    var appPath = path.join(config.root, 'client');
+    var appPath = path.join(config.root, 'dist');
     app.use(express.static(appPath));
     app.set('appPath', appPath);
     app.use(morgan('dev'));

@@ -1,1 +1,3 @@
-﻿var appModule = angular.module('appModule', ['ngAnimate']);
+﻿'use strict';
+
+var appModule = angular.module('appModule', ['ngAnimate']);

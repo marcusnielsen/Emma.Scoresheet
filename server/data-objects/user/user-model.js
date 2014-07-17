@@ -36,7 +36,7 @@ UserSchema.pre('save', function (callback) {
                 user.password = hash;
                 callback();
             });
-    })
+    });
 });
 
 UserSchema.methods.verifyPassword = function(password, cb) {

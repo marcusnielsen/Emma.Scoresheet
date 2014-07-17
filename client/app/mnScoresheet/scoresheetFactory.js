@@ -1,4 +1,6 @@
-﻿appModule.factory('scoresheetFactory', [function () {
+﻿'use strict';
+
+appModule.factory('scoresheetFactory', [function () {
     return {
         title: 'EMMA Scoresheet',
         formGroups: [

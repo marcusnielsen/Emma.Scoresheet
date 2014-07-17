@@ -1,4 +1,6 @@
-﻿appModule
+﻿'use strict';
+
+appModule
 .directive('ngSize', function () {
     return {
         restrict: 'A',
