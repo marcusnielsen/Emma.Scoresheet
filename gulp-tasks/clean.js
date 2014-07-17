@@ -1,10 +1,9 @@
 'use strict';
 
-var rimraf = require('gulp-rimraf');
+var del = require('del');
 
 module.exports = function (gulp) {
-    gulp.task('clean', function () {
-        gulp.src('./dist/**/*', {read: false})
-            .pipe(rimraf());
+    gulp.task('clean', function (callback) {
+        del(['./dist'], callback);
     });
 };
