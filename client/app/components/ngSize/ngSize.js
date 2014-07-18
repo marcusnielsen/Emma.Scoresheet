@@ -1,4 +1,6 @@
-﻿'use strict';
+﻿//TODO: Browserify if needed. Test newer angular versions first
+/*
+'use strict';
 
 appModule
 .directive('ngSize', function () {
@@ -14,3 +16,4 @@ appModule
         }
     };
 });
+*/

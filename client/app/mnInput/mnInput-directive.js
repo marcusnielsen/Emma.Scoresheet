@@ -1,6 +1,8 @@
 ﻿'use strict';
 
-appModule.directive('mnInput', function () {
+var _ = require('lodash');
+
+module.exports = function () {
     return {
         restrict: 'E',
         scope: {'input': '='},
@@ -29,6 +31,6 @@ appModule.directive('mnInput', function () {
                 return _.isUndefined(option.title) ? option : option.title;
             };
         },
-        templateUrl: "app/mnInput/mnInputTemplate.html"
+        templateUrl: 'app/mnInput/mnInputTemplate.html'
     };
-});
+};

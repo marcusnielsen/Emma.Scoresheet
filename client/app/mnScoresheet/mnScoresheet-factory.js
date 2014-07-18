@@ -1,6 +1,8 @@
 ﻿'use strict';
 
-appModule.factory('scoresheetFactory', [function () {
+require('../../helpers/dateHelper');
+
+module.exports = function () {
     return {
         title: 'EMMA Scoresheet',
         formGroups: [
@@ -16,7 +18,7 @@ appModule.factory('scoresheetFactory', [function () {
                 {
                     title: 'Name',
                     type: 'static',
-                    value: 'Aston Martin',
+                    value: 'Aston Martin'
                 }
             ]
         },
@@ -159,4 +161,4 @@ appModule.factory('scoresheetFactory', [function () {
           }
         ]
     };
-}]);
+};

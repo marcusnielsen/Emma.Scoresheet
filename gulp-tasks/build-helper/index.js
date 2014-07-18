@@ -13,7 +13,7 @@ var htmlmin = require('gulp-htmlmin');
 module.exports = function () {
     browserify('./client/app/app-module.js').bundle({debug: true})
         .pipe(vinylSourceStream('bundle.js'))
-        .pipe(streamify(uglify()))
+        //.pipe(streamify(uglify()))
         .pipe(gulp.dest('./dist/js'));
 
     gulp.src('./client/**/*.less')
@@ -26,4 +26,7 @@ module.exports = function () {
     gulp.src('./client/**/*.html')
         .pipe(htmlmin({collapseWhitespace: true}))
         .pipe(gulp.dest('./dist/'));
+
+    gulp.src('./client/localization/**/*')
+        .pipe(gulp.dest('./dist/localization/'));
 };

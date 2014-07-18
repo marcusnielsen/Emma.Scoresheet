@@ -12,9 +12,6 @@ var path = require('path');
 
 module.exports = function(config) {
     var env = app.get('env');
-    app.set('views', path.join(config.root, '/server/views'));
-    app.engine('html', require('ejs').renderFile);
-    app.set('view engine', 'html');
     app.use(compression());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
@@ -27,15 +24,19 @@ module.exports = function(config) {
     // require('../mongodb/mongoStore')(app, config);
 
     //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
+    var serverViewRouter = express.Router();
+    require('../views')(app, serverViewRouter, config);
+    app.use('/', serverViewRouter);
+
     var appPath = path.join(config.root, 'dist');
-    app.use(express.static(appPath));
+    app.use('/dist', express.static(appPath));
     app.set('appPath', appPath);
     app.use(morgan('dev'));
 
     var isAuthenticated = require('../passport')(app).isAuthenticated;
-    var router = express.Router();
-    require('../../data-objects/index')(router, isAuthenticated);
-    app.use('/api', router);
+    var apiRouter = express.Router();
+    require('../../data-objects/index')(apiRouter, isAuthenticated);
+    app.use('/api', apiRouter);
 
     return app;
 };

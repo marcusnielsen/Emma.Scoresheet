@@ -1,7 +1,8 @@
 ﻿'use strict';
 
-appModule
-.directive('mnScoresheet', function () {
+var _ = require('lodash')
+
+module.exports = function () {
     return {
         restrict: 'E',
         scope: {
@@ -28,6 +29,6 @@ appModule
         },
         templateUrl: 'app/mnScoresheet/mnScoresheetTemplate.html'
     };
-});
+};
 
 
