@@ -29,6 +29,7 @@ module.exports = function (gulp) {
                 .pipe(livereload());
         };
 
+        require('../server/server');
         return rebundle();
     });
 };
