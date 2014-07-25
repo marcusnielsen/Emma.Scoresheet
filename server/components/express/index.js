@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 // TODO: var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var path = require('path');
+var livereload = require('connect-livereload');
 
 module.exports = function(config) {
     var env = app.get('env');
@@ -28,6 +29,7 @@ module.exports = function(config) {
     require('../views')(app, serverViewRouter, config);
     app.use('/', serverViewRouter);
 
+    app.use(livereload);
     var appPath = path.join(config.root, 'dist');
     app.use('/dist', express.static(appPath));
     app.set('appPath', appPath);
