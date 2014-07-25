@@ -20,7 +20,7 @@ module.exports = function (gulp) {
         };*/
 
         var bundler = watchify('./client/app/app-module.js');
-
+        
         var rebundle = function () {
             return bundler.bundle({debug: true})
                 .pipe(vinylSourceStream('bundle.js'))
@@ -28,8 +28,11 @@ module.exports = function (gulp) {
                 .pipe(gulp.dest('./dist/js'))
                 .pipe(livereload());
         };
-
+        
+        bundler.on('update', rebundle);
+        
         require('../server/server');
+        
         return rebundle();
     });
 };
