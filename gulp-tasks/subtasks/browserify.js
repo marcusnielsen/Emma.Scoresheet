@@ -10,7 +10,7 @@ module.exports = function (gulp) {
         return browserify('./client/app/app-module.js')
             .bundle({debug: true})
             .pipe(vinylSourceStream('bundle.js'))
-            .pipe(streamify(uglify()))
+            //.pipe(streamify(uglify()))
             .pipe(gulp.dest('./dist/js'));
     });
 };

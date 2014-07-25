@@ -5,6 +5,6 @@ module.exports = ['$scope', 'mnScoresheetFactory', 'mnThemeFactory', function ($
         githubUrl: 'https://github.com/marcusnielsen/emma-scoresheet'
     };
 
-    $scope.style = mnThemeFactory;
+    $scope.theme = mnThemeFactory;
     $scope.scoresheet = mnScoresheetFactory;
 }];
