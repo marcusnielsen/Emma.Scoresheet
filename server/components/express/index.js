@@ -24,12 +24,13 @@ module.exports = function(config) {
     //TODO: Fix deprecated warning before using.
     // require('../mongodb/mongoStore')(app, config);
 
+    app.use(livereload());
+
     //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     var serverViewRouter = express.Router();
     require('../views')(app, serverViewRouter, config);
     app.use('/', serverViewRouter);
 
-    app.use(livereload);
     var appPath = path.join(config.root, 'dist');
     app.use('/dist', express.static(appPath));
     app.set('appPath', appPath);
