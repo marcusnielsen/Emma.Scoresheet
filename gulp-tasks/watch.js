@@ -2,8 +2,6 @@
 
 var gulp = require('gulp');
 var vinylSourceStream = require('vinyl-source-stream');
-var uglify = require('gulp-uglify');
-var streamify = require('gulp-streamify');
 var livereload = require('gulp-livereload');
 var watchify = require('watchify');
 
@@ -17,19 +15,22 @@ module.exports = function (gulp) {
     gulp.task('watch', function () {
 
         var bundler = watchify('./client/app/app-module.js');
-        
+
+        bundler.transform({
+            global: true
+        }, 'uglifyify');
+
         var rebundle = function () {
             return bundler.bundle({debug: true})
                 .pipe(vinylSourceStream('bundle.js'))
-                .pipe(streamify(uglify()))
                 .pipe(gulp.dest('./dist/js'))
                 .pipe(livereload());
         };
-        
+
         bundler.on('update', rebundle);
-        
+
         require('../server/server');
-        
+
         return rebundle();
     });
 };

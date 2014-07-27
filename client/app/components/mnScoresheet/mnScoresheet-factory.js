@@ -1,6 +1,6 @@
-﻿'use strict';
+'use strict';
 
-require('../../helpers/dateHelper');
+require('../../../helpers/dateHelper');
 
 module.exports = function () {
     return {
