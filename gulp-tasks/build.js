@@ -7,10 +7,10 @@ require('./subtasks/clean')(gulp);
 require('./subtasks/browserify')(gulp);
 require('./subtasks/less')(gulp);
 require('./subtasks/html')(gulp);
-require('./subtasks/move')(gulp);
+require('./subtasks/moveLocalization')(gulp);
 
 module.exports = function (gulp) {
     gulp.task('build', function (callback) {
-        runSequence('clean', ['browserify', 'less', 'html', 'move'], callback);
+        runSequence('clean', ['browserify', 'less', 'html', 'moveLocalization'], callback);
     });
 };

@@ -9,6 +9,7 @@ var bodyParser = require('body-parser');
 // TODO: var methodOverride = require('method-override');
 var cookieParser = require('cookie-parser');
 var path = require('path');
+var livereload = require('connect-livereload');
 
 module.exports = function(config) {
     var env = app.get('env');
@@ -22,6 +23,8 @@ module.exports = function(config) {
 
     //TODO: Fix deprecated warning before using.
     // require('../mongodb/mongoStore')(app, config);
+
+    app.use(livereload());
 
     //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
     var serverViewRouter = express.Router();
