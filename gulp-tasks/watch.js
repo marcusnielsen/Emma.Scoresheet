@@ -4,6 +4,7 @@ var gulp = require('gulp');
 var vinylSourceStream = require('vinyl-source-stream');
 var livereload = require('gulp-livereload');
 var watchify = require('watchify');
+var nodemon = require('gulp-nodemon');
 
 require('./subtasks/clean')(gulp);
 require('./subtasks/browserify')(gulp);
@@ -27,9 +28,15 @@ module.exports = function (gulp) {
                 .pipe(livereload());
         };
 
+        nodemon({ script: './server/server.js', ext: 'html js', watch: './server/' })
+            //.on('change', ['lint'])
+            .on('restart', function () {
+                console.log('Server restarted!');
+            });
+
         bundler.on('update', rebundle);
 
-        require('../server/server');
+        // require('../server/server');
 
         return rebundle();
     });
