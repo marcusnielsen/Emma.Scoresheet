@@ -5,7 +5,7 @@ var User = require('./user-model')();
 module.exports = function () {
     var userRepository = {};
 
-    userRepository.postUser = function (userInput, cb) {
+    userRepository.saveUser = function (userInput, cb) {
         var user = new User({
             name: userInput.name,
             password: userInput.password

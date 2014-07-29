@@ -7,7 +7,7 @@ module.exports = function (userRepository) {
         userRepository.deleteUsers();
         callback(null);
     };
-    
+
     var seedUsers = function (callback) {
         var users = [
             {name: 'User', password: 'user'},
@@ -18,7 +18,7 @@ module.exports = function (userRepository) {
         var dataCollection = [];
 
         users.forEach(function (user) {
-            userRepository.postUser(user, function (err, data) {
+            userRepository.saveUser(user, function (err, data) {
                 if(err) {
                     console.error(err);
                 }
@@ -31,7 +31,7 @@ module.exports = function (userRepository) {
             });
         });
     };
-    
+
     async.waterfall([
         deleteUsers,
         seedUsers],

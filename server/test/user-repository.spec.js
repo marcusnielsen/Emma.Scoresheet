@@ -12,8 +12,8 @@ var testUserInput = {name: 'Test User', password: 'testpassword97531'};
 var testUser;
 
 beforeEach(function(done){
-    userRepository.postUser(testUserInput, function (err, data) {
-        if(err) {console.error('postUser error: ' + err);}
+    userRepository.saveUser(testUserInput, function (err, data) {
+        if(err) {console.error('saveUser error: ' + err);}
 
         console.log(data.message);
 
