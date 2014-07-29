@@ -3,9 +3,9 @@
 var User = require('./user-model')();
 
 module.exports = function () {
-    var exports = {};
+    var userRepository = {};
 
-    exports.postUser = function (userInput, cb) {
+    userRepository.postUser = function (userInput, cb) {
         var user = new User({
             name: userInput.name,
             password: userInput.password
@@ -20,7 +20,18 @@ module.exports = function () {
         });
     };
 
-    exports.getUsers = function (cb) {
+    userRepository.getUserByName = function (name, cb) {
+      User.findOne({name: name}, function (err, user) {
+          if(err) {
+              cb(err);
+              return;
+          }
+
+          cb(null, user);
+      })
+    };
+
+    userRepository.getUsers = function (cb) {
         User.find(function (err, users) {
            if(err) {
                cb(err);
@@ -30,11 +41,12 @@ module.exports = function () {
         });
     };
 
-    exports.deleteUsers = function () {
+    userRepository.deleteUsers = function (cb) {
         User.find({}).remove(function () {
             console.log('Removed all users from db.');
+            cb();
         });
     };
 
-    return exports;
+    return userRepository;
 };
