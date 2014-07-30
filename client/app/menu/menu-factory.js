@@ -2,10 +2,10 @@
 
 module.exports = ['$state', function ($state) {
     var factory = {
-        brandMenuItem: {title: 'MBI', sref: 'home'},
+        brandMenuItem: {title: 'EMMA', sref: 'home'},
         navigationItems: [
-            {title: 'HOME', sref:'home'},
-            {title: 'LOGIN', sref:'login'}
+            {title: '$HOME', sref:'home'},
+            {title: '$LOGIN', sref:'login'}
         ]
     };
 

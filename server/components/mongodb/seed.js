@@ -3,9 +3,8 @@
 var async = require('async');
 
 module.exports = function (userRepository) {
-    var deleteUsers = function (callback) {
-        userRepository.deleteUsers();
-        callback(null);
+    var deleteUsers = function (cb) {
+        userRepository.deleteUsers(cb);
     };
 
     var seedUsers = function (callback) {

@@ -12,6 +12,9 @@ require('./subtasks/less')(gulp);
 require('./subtasks/html')(gulp);
 require('./subtasks/moveLocalization')(gulp);
 
+// TODO: Add linting.
+// TODO: Add watch on all client files. Not only browserify files.
+
 module.exports = function (gulp) {
     gulp.task('watch', function () {
 
@@ -29,14 +32,11 @@ module.exports = function (gulp) {
         };
 
         nodemon({ script: './server/server.js', ext: 'html js', watch: './server/' })
-            //.on('change', ['lint'])
             .on('restart', function () {
                 console.log('Server restarted!');
             });
 
         bundler.on('update', rebundle);
-
-        // require('../server/server');
 
         return rebundle();
     });

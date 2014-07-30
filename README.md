@@ -1,10 +1,49 @@
-Emma.Scoresheet
+emma-scoresheet
 ===============
+European mobile media association scoresheet.
 
-European mobile media association scoresheet
+This is a pet project of mine where I will try to make a small portal for scoring car sound on EMMA competitions.
 
-Visit http://emma-scoresheet.azurewebsites.net/ for the latest (and unstable) version. 
-Note that this will be changed to divide into: 
-* Development version
-* Test version
-* Production / Stable version
+I will try to use MEAN stack best practices as done by others.
+
+Prerequisites
+------------
+###Core
+* Git.
+* Node.js.
+* MongoDB.
+
+###NPM global packages
+* Express.
+* Gulp.
+* Browserify.
+* Napa.
+* Mocha.
+
+To install
+----------
+* Install the prerequisites.
+* Git clone this repository.
+* Run npm install.
+* Start with 'npm start' or with 'gulp watch' for development mode.
+
+
+About the code
+--------------
+###Development tools
+* Livereload.
+* Nodemon.
+
+###Build tools
+* Gulp.
+* Browserify.
+
+###Structure
+Module-based.
+
+###Features
+* Localized.
+* Secure login via passport.
+* Change bootswatch theme in runtime.
+* Scoresheet forms are built from JSON.
+* Each form input type is rendered as its own directive.
