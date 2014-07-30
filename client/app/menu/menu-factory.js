@@ -13,6 +13,8 @@ module.exports = ['$state', function ($state) {
         return $state.includes(sref);
     };
 
+    // TODO: Check if isCollapsed is the wrong word. Should it be isExpanded?
+    // For compressed menu when viewing with a small screen.
     factory.isCollapsed = true;
 
     return factory;
