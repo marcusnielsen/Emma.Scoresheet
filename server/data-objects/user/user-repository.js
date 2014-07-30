@@ -28,7 +28,7 @@ module.exports = function () {
           }
 
           cb(null, user);
-      })
+      });
     };
 
     userRepository.getUsers = function (cb) {
