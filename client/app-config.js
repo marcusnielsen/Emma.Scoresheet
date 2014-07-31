@@ -17,7 +17,7 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
         $stateProvider
             .state('home', {
                 url: '/',
-                templateUrl: 'dist/app/home/home.html',
+                templateUrl: 'dist/html/views/home/home.html',
                 controller: 'mnHomeController'
             })
             .state('contact', {
