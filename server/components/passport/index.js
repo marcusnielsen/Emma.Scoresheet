@@ -1,37 +1,24 @@
 'use strict';
 
+var passport = require('passport');
+require('./strategies/local');
+
+//TODO: Use repository and not the model for findById.
+var User = require('../../data-objects/user/user-model');
+
 module.exports = function (app) {
-
-    var passport = require('passport');
     app.use(passport.initialize());
-    var BasicStrategy = require('passport-http').BasicStrategy;
-    // TODO: Use the repository layer.
-    var User = require('../../data-objects/user/user-model')();
+    app.use(passport.session());
 
-    passport.use(new BasicStrategy(
-        function(name, password, done) {
-            User.findOne({ name: name }, function (err, user) {
-                if (err) { return done(err); }
-                console.log(err);
-                console.log(user);
-                // No user found with that name
-                if (!user) { return done(null, false); }
+     passport.serializeUser(function(user, done) {
+        done(null, user.id);
+     });
 
-                // Make sure the password is correct
-                user.verifyPassword(password, function(err, isMatch) {
-                    if (err) { return done(err); }
+     passport.deserializeUser(function(id, done) {
+         User.findById(id, function(err, user) {
+            done(err, user);
+         });
+     });
 
-                    // Password did not match
-                    if (!isMatch) { return done(null, false); }
-
-                    // Success
-                    return done(null, user);
-                });
-            });
-        }
-    ));
-
-    var exports = {};
-    exports.isAuthenticated = passport.authenticate('basic', { session : false });
-    return exports;
+    return passport;
 };

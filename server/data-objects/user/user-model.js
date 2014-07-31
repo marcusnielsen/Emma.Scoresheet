@@ -41,7 +41,7 @@ UserSchema.pre('save', function (callback) {
 
 UserSchema.methods.verifyPassword = function(password, cb) {
     bcrypt.compare(password, this.password, function(err, isMatch) {
-        if (err) { 
+        if (err) {
             return cb(err);
         }
         cb(null, isMatch);
@@ -50,6 +50,4 @@ UserSchema.methods.verifyPassword = function(password, cb) {
 
 var User = mongoose.model('User', UserSchema);
 
-module.exports = function () {
-    return User;
-};
+module.exports = User;

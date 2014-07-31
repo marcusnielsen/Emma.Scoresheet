@@ -6,12 +6,14 @@ module.exports = ['$http', function($http) {
     loginFactory.register = function () {
         console.dir(loginFactory.user);
         $http.post('api/users', loginFactory.user).then(function () {
-            loginFactory.isLoggedIn = true;
+
         });
     };
 
     loginFactory.login = function () {
-        alert('LOGIN CALLED!');
+        $http.post('api/login', loginFactory.user).then(function () {
+            loginFactory.isLoggedIn = true;
+        });
     };
 
     loginFactory.user = {

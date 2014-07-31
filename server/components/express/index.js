@@ -10,9 +10,12 @@ var bodyParser = require('body-parser');
 var cookieParser = require('cookie-parser');
 var path = require('path');
 var livereload = require('connect-livereload');
+var session = require('express-session');
+var flash = require('connect-flash');
 
 module.exports = function(config) {
     var env = app.get('env');
+    app.use(morgan('dev'));
     app.use(compression());
     app.use(bodyParser.json());
     app.use(bodyParser.urlencoded({
@@ -21,9 +24,16 @@ module.exports = function(config) {
     //TODO: app.use(methodOverride());
     app.use(cookieParser());
 
-    //TODO: Fix deprecated warning before using.
-    // require('../mongodb/mongoStore')(app, config);
+    app.use(session({
+        secret: config.secrets.session,
+        saveUninitialized: true,
+        resave: true
+    }));
 
+    var passport = require('../passport')(app);
+    app.use(flash());
+
+    // TODO: Only use this for development server.
     app.use(livereload());
 
     //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
@@ -34,11 +44,9 @@ module.exports = function(config) {
     var appPath = path.join(config.root, 'dist');
     app.use('/dist', express.static(appPath));
     app.set('appPath', appPath);
-    app.use(morgan('dev'));
 
-    var isAuthenticated = require('../passport')(app).isAuthenticated;
     var apiRouter = express.Router();
-    require('../../data-objects/index')(apiRouter, isAuthenticated);
+    require('../../data-objects/index')(apiRouter, passport);
     app.use('/api', apiRouter);
 
     return app;
