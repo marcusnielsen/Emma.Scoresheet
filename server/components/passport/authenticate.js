@@ -1,14 +1,14 @@
 'use strict';
 
 // route middleware to make sure a user is logged in
-function isLoggedIn(req, res, next) {
+var isLoggedIn = function (req, res, next) {
 
     // if user is authenticated in the session, carry on
-    if (req.isAuthenticated())
+    if (!req.isAuthenticated()) {
         return next();
+    }
 
-    // if they aren't redirect them to the home page
-    res.redirect('/');
-}
+    res.send(401);
+};
 
 module.exports = isLoggedIn;

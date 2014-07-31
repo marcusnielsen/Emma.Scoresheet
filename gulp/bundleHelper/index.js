@@ -4,6 +4,7 @@ var livereload = require('gulp-livereload');
 var gulp = require('gulp');
 
 var bundleHelper = function (bundler) {
+    //TODO: Fix non-minimized source maps.
     bundler.transform({
         global: true
     }, 'uglifyify');

@@ -11,8 +11,10 @@ module.exports = ['$http', function($http) {
     };
 
     loginFactory.login = function () {
-        $http.post('api/login', loginFactory.user).then(function () {
-            loginFactory.isLoggedIn = true;
+        //TODO: Cleanup isLoggedIn = data.
+        $http.post('api/login', loginFactory.user).then(function (res) {
+            console.dir(res.data);
+            loginFactory.isLoggedIn = res.data.name;
         });
     };
 

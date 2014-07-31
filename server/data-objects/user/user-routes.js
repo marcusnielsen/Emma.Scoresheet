@@ -20,8 +20,7 @@ module.exports = function (router, userRepository, passport) {
             failureRedirect: '/fail',
             failureFlash: true
         }), function (req, res) {
-            console.log('/login route success!!!!');
-            res.redirect('/');
+            res.send(req.user);
         });
 
         // TODO: Fix code when needed.
@@ -39,7 +38,6 @@ module.exports = function (router, userRepository, passport) {
     router.route('logout')
         .get(function (req, res) {
            req.logout();
-            //TODO: Set to a logout page.
-           res.redirect('/');
+           res.send(200);
         });
 };
