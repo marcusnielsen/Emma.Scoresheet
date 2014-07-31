@@ -4,5 +4,8 @@
     "$CHANGE_THEME": "Change theme",
     "$CHANGE_LANGUAGE": "Change language",
     "$SCORESHEET": "Poängformulär",
-    "$LOGIN": "Logga in"
+    "$LOGIN": "Logga in",
+    "$USERNAME": "Användarnamn",
+    "$PASSWORD": "Lösenord",
+    "$REGISTER": "Registrera"
 }

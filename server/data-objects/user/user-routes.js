@@ -12,8 +12,12 @@ module.exports = function (router, userRepository, isAuthenticated) {
 
                 res.json(data);
             });
-        })
-        .get(isAuthenticated, function (req, res) {
+        });
+
+
+
+        // TODO: Fix code when needed.
+        /*.get(isAuthenticated, function (req, res) {
             userRepository.getUsers(function (err, data) {
                 if(err) {
                     console.error(err);
@@ -22,5 +26,5 @@ module.exports = function (router, userRepository, isAuthenticated) {
 
                 res.json(data);
             });
-        });
+        });*/
 };
