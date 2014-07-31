@@ -3,5 +3,6 @@
     "$LOGIN": "Login",
     "$CHANGE_THEME": "Change theme",
     "$CHANGE_LANGUAGE": "Change language",
-    "$SCORESHEET": "Scoresheet"
+    "$SCORESHEET": "Scoresheet",
+    "$LOGIN": "Login"
 }

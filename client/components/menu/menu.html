@@ -19,7 +19,7 @@
             </ul>
             <div class="navbar-right">
                 <div class="nav navbar-nav">
-                    <div class="btn-group dropdown">
+                    <span class="dropdown">
                         <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
                             <span data-translate="$CHANGE_THEME"></span>
                             <span class="caret"></span>
@@ -29,8 +29,8 @@
                                 <a href="" data-ng-click="theme.setTheme(themeItem)" data-ng-bind="themeItem.name"></a>
                             </li>
                         </ul>
-                    </div>
-                    <div class="btn-group  dropdown">
+                    </span>
+                    <span class="dropdown">
                         <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
                             <span data-translate="$CHANGE_LANGUAGE"></span>
                             <span class="caret"></span>
@@ -43,7 +43,7 @@
                                 <a href="" data-ng-click="translate.use('sv_SE')">svenska</a>
                             </li>
                         </ul>
-                    </div>
+                    </span>
                 </div>
             </div>
         </nav>

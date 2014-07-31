@@ -3,5 +3,6 @@
     "$LOGIN": "Logga in",
     "$CHANGE_THEME": "Change theme",
     "$CHANGE_LANGUAGE": "Change language",
-    "$SCORESHEET": "Poängformulär"
+    "$SCORESHEET": "Poängformulär",
+    "$LOGIN": "Logga in"
 }

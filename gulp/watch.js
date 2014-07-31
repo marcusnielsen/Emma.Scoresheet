@@ -5,6 +5,7 @@ var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 var watchify = require('watchify');
 var nodemon = require('gulp-nodemon');
+var gulpWatch = require('gulp-watch');
 
 require('./subtasks/clean');
 require('./subtasks/browserify');
@@ -18,9 +19,17 @@ gulp.task('watch', function () {
     var makeBundle = require('./bundleHelper')(bundler);
     bundler.on('update', makeBundle);
 
-    gulp.watch(config.html.source, ['html']);
-    gulp.watch(config.localization.source, ['moveLocalization']);
-    gulp.watch(config.less.source, ['less']);
+    gulpWatch({glob: config.html.source}, function () {
+       gulp.start('html');
+    });
+
+    gulpWatch({glob: config.localization.source}, function () {
+        gulp.start('moveLocalization');
+    });
+
+    gulpWatch({glob: config.less.source}, function () {
+        gulp.start('less');
+    });
 
     nodemon({ script: config.nodemon.start, ext: config.nodemon.ext, watch: config.nodemon.source })
         .on('restart', function () {

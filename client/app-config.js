@@ -20,9 +20,9 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
                 templateUrl: 'dist/html/views/home/home.html',
                 controller: 'mnHomeController'
             })
-            .state('contact', {
-                url: '/contact',
-                templateUrl: 'dist/app/contact/contact.html',
-                controller: 'mnContactController'
+            .state('login', {
+                url: '/login',
+                templateUrl: 'dist/html/views/login/login.html',
+                controller: 'mnLoginController'
             });
     }];

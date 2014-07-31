@@ -8,6 +8,7 @@ var uiRouterName = require('angular-ui-router');
 var theme = require('./components/theme');
 var menu = require('./components/menu');
 var home = require('./views/home');
+var login = require('./views/login');
 var mnInput = require('./components/mnInput');
 var mnScoresheet = require('./components/mnScoresheet');
 
@@ -18,6 +19,7 @@ var app = angular.module('app', [
     theme.name,
     menu.name,
     home.name,
+    login.name,
     mnInput.name,
     mnScoresheet.name
 ]);
