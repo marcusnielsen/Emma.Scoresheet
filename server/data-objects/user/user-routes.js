@@ -14,13 +14,12 @@ module.exports = function (router, userRepository, passport) {
       });
     });
 
-  // TODO: Redirects.
   router.route('/login')
     .post(passport.authenticate('local', {
       failureRedirect: '/fail',
       failureFlash: true
     }), function (req, res) {
-      res.send(req.user);
+      res.json(req.user);
     });
 
   // TODO: Fix code when needed.
