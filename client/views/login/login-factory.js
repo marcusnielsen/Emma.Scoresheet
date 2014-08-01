@@ -1,6 +1,6 @@
 'use strict';
 
-module.exports = ['$http', function ($http) {
+module.exports = ['$rootScope', '$http', function ($rootScope, $http) {
   var loginFactory = {};
 
   loginFactory.register = function () {
@@ -11,14 +11,19 @@ module.exports = ['$http', function ($http) {
   };
 
   loginFactory.login = function () {
-    //TODO: Cleanup isLoggedIn = data.
     $http.post('api/login', loginFactory.user).then(function (res) {
+      loginFactory.user.id = res.data._id;
+      // TODO: Remove.
       console.dir(res.data);
+      //TODO: Cleanup isLoggedIn = data.
       loginFactory.isLoggedIn = res.data.name;
+
+      $rootScope.$broadcast('login-logged-in');
     });
   };
 
   loginFactory.user = {
+    id: '',
     name: '',
     password: ''
   };

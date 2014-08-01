@@ -10,6 +10,10 @@ passport.use(new LocalStrategy({
     passwordField: 'password'
   },
   function (name, password, done) {
+
+    //TODO: Remove.
+    console.log('Inside LocalStrategy callback.');
+
     User.findOne({ name: name }, function (err, user) {
       if (err) {
         return done(err);

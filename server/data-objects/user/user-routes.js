@@ -1,6 +1,9 @@
 'use strict';
 
-module.exports = function (router, userRepository, passport) {
+var userRepository = require('./user-repository');
+var passport = require('passport');
+
+module.exports = function (router) {
   router.route('/users')
     .post(function (req, res) {
       console.log('req.body: ' + req.body.name + req.body.password);
@@ -15,11 +18,23 @@ module.exports = function (router, userRepository, passport) {
     });
 
   router.route('/login')
-    .post(passport.authenticate('local', {
-      failureRedirect: '/fail',
-      failureFlash: true
-    }), function (req, res) {
-      res.json(req.user);
+    .post(function (req, res, next) {
+      passport.authenticate('local',
+        function (err, user, info) {
+          //TODO: Remove.
+          console.log('Inside /login route.');
+          if (err) { return next(err); }
+
+          if (!user) { return res.status(401).end(); }
+
+          req.logIn(user, function(err) {
+            if (err) { return next(err); }
+
+            //TODO: Send back a 200 status when done with testing stuff.
+            return res.json(req.user);
+          });
+        }
+      )(req,res,next);
     });
 
   // TODO: Fix code when needed.

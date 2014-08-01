@@ -1,11 +1,21 @@
 'use strict';
 
-module.exports = ['$scope', '$translate', 'mnScoresheetFactory', 'mnSettingsFactory', function ($scope, $translate, mnScoresheetFactory, mnSettingsFactory) {
+var _ = require('lodash');
+
+module.exports = ['$scope', '$translate', 'mnThemeFactory', 'mnSettingsFactory', 'mnScoresheetFactory', function ($scope, $translate, mnThemeFactory, mnSettingsFactory, mnScoresheetFactory) {
   $scope.app = {
     githubUrl: 'https://github.com/marcusnielsen/emma-scoresheet'
   };
 
+  $scope.theme = mnThemeFactory;
   $scope.translate = $translate;
   $scope.scoresheet = mnScoresheetFactory;
-  $scope.settings = mnSettingsFactory;
+
+  $scope.$on('settings-changed', function () {
+    var lclSetting = _.find(mnSettingsFactory.settingsCollection, function (setting) {
+      return setting.name === 'lcl';
+    });
+
+    $translate.use(lclSetting.value);
+  });
 }];

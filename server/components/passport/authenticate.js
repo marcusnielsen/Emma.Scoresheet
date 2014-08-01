@@ -4,11 +4,11 @@
 var isLoggedIn = function (req, res, next) {
 
   // if user is authenticated in the session, carry on
-  if (!req.isAuthenticated()) {
+  if (req.isAuthenticated()) {
     return next();
   }
 
-  res.send(401);
+  res.status(401).end();
 };
 
 module.exports = isLoggedIn;

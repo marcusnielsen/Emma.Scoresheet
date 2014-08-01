@@ -1,6 +1,6 @@
 'use strict';
-var mnTheme = require('../../components/theme');
+var mnLogin = require('../login');
 
-module.exports = angular.module('mnSettings', [mnTheme.name])
+module.exports = angular.module('mnSettings', [mnLogin.name])
   .factory('mnSettingsFactory', require('./settings-factory'))
   .controller('mnSettingsController', require('./settings-controller'));

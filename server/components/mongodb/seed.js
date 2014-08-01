@@ -39,11 +39,11 @@ module.exports = function () {
   var settingsCollections = {
     useren: [
       {name: 'lcl', value: 'en_US'},
-      {name: 'cssCdn', value: '//netdna.bootstrapcdn.com/bootswatch/latest/slate/bootstrap.min.css'}
+      {name: 'themeName', value: 'slate'}
   ],
     userse: [
       {name: 'lcl', value: 'sv_SE'},
-      {name: 'cssCdn', value: '//netdna.bootstrapcdn.com/bootswatch/latest/cosmo/bootstrap.min.css'}
+      {name: 'themeName', value: 'cosmo'}
     ]
   };
 

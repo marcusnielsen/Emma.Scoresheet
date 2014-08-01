@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = ['$scope', function ($scope) {
-
+module.exports = ['$scope', 'mnSettingsFactory', function ($scope, mnSettingsFactory) {
+  $scope.settings = mnSettingsFactory;
 }];
