@@ -1,5 +1,5 @@
 'use strict';
-// TODO: Find best practice for using lodash in multiple files.
+
 var _ = require('lodash');
 
 module.exports = ['$http', function ($http) {

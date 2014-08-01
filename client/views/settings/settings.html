@@ -12,9 +12,9 @@
                 <span class="caret"></span>
             </button>
             <ul class="dropdown-menu">
-                <li data-ng-repeat="themeItem in theme.themes"
-                    data-ng-class="{'active': theme.isThemeNameSelected(themeItem.name) }">
-                    <a href="" data-ng-click="theme.setTheme(themeItem)" data-ng-bind="themeItem.name"></a>
+                <li data-ng-repeat="themeItem in settings.theme.themes"
+                    data-ng-class="{'active': settings.theme.isThemeNameSelected(themeItem.name) }">
+                    <a href="" data-ng-click="settings.theme.setTheme(themeItem)" data-ng-bind="themeItem.name"></a>
                 </li>
             </ul>
         </span>

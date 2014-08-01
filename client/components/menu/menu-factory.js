@@ -5,7 +5,8 @@ module.exports = ['$state', function ($state) {
     brandMenuItem: {title: 'EMMA', sref: 'home'},
     navigationItems: [
       {title: '$HOME', sref: 'home'},
-      {title: '$LOGIN', sref: 'login'}
+      {title: '$LOGIN', sref: 'login'},
+      {title: '$SETTINGS', sref: 'settings'}
     ]
   };
 

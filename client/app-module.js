@@ -10,6 +10,7 @@ var menu = require('./components/menu');
 var home = require('./views/home');
 var login = require('./views/login');
 var mnInput = require('./components/mnInput');
+var mnSettings = require('./views/settings');
 var mnScoresheet = require('./components/mnScoresheet');
 
 var app = angular.module('app', [
@@ -21,6 +22,7 @@ var app = angular.module('app', [
   home.name,
   login.name,
   mnInput.name,
+  mnSettings.name,
   mnScoresheet.name
 ]);
 

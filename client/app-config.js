@@ -20,6 +20,11 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
         templateUrl: 'dist/html/views/home/home.html',
         controller: 'mnHomeController'
       })
+      .state('settings', {
+        url: '/settings',
+        templateUrl: 'dist/html/views/settings/settings.html',
+        controller: 'mnSettingsController'
+      })
       .state('login', {
         url: '/login',
         templateUrl: 'dist/html/views/login/login.html',

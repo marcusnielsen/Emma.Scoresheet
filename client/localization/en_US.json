@@ -7,5 +7,6 @@
   "$LOGIN": "Login",
   "$USERNAME": "Username",
   "$PASSWORD": "Password",
-  "$REGISTER": "Register"
+  "$REGISTER": "Register",
+  "$SETTINGS": "Settings"
 }

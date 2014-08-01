@@ -7,5 +7,6 @@
   "$LOGIN": "Logga in",
   "$USERNAME": "Användarnamn",
   "$PASSWORD": "Lösenord",
-  "$REGISTER": "Registrera"
+  "$REGISTER": "Registrera",
+  "$SETTINGS": "Inställningar"
 }
