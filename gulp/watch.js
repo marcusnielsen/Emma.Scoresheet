@@ -15,28 +15,28 @@ require('./subtasks/moveLocalization');
 
 gulp.task('watch', function () {
 
-    var bundler = watchify(config.browserify.source);
-    var makeBundle = require('./bundleHelper')(bundler);
-    bundler.on('update', makeBundle);
+  var bundler = watchify(config.browserify.source);
+  var makeBundle = require('./bundleHelper')(bundler);
+  bundler.on('update', makeBundle);
 
-    gulpWatch({glob: config.html.source}, function () {
-       gulp.start('html');
+  gulpWatch({glob: config.html.source}, function () {
+    gulp.start('html');
+  });
+
+  gulpWatch({glob: config.localization.source}, function () {
+    gulp.start('moveLocalization');
+  });
+
+  gulpWatch({glob: config.less.source}, function () {
+    gulp.start('less');
+  });
+
+  nodemon({ script: config.nodemon.start, ext: config.nodemon.ext, watch: config.nodemon.source })
+    .on('restart', function () {
+      console.log('Server restarted!');
     });
 
-    gulpWatch({glob: config.localization.source}, function () {
-        gulp.start('moveLocalization');
-    });
+  livereload.listen();
 
-    gulpWatch({glob: config.less.source}, function () {
-        gulp.start('less');
-    });
-
-    nodemon({ script: config.nodemon.start, ext: config.nodemon.ext, watch: config.nodemon.source })
-        .on('restart', function () {
-            console.log('Server restarted!');
-        });
-
-    livereload.listen();
-
-    return makeBundle();
+  return makeBundle();
 });

@@ -2,14 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" data-ng-app="app" data-ng-controller="appController">
 <head>
     <title>{{app.title}}</title>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
-    <link data-ng-href="{{theme.selected.cssCdn}}" type="text/css" rel="stylesheet" />
-    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet" />
-    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet" />
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"/>
+    <link data-ng-href="{{theme.selected.cssCdn}}" type="text/css" rel="stylesheet"/>
+    <link href="//netdna.bootstrapcdn.com/font-awesome/4.0.3/css/font-awesome.min.css" rel="stylesheet"/>
+    <link href="//cdnjs.cloudflare.com/ajax/libs/animate.css/3.0.0/animate.min.css" rel="stylesheet"/>
     <!--<link href="content/animate.min.css" rel="stylesheet" />-->
     <!--<link href="content/animations.min.css" rel="stylesheet" />-->
-    <link href="css/app/style.css" rel="stylesheet" />
+    <link href="css/app/style.css" rel="stylesheet"/>
 </head>
 <body class="ng-cloak" data-ng-cloak="">
 <div class="wrapper">
@@ -28,13 +28,16 @@
                         <span class="fa fa-star second"></span>
                         <span class="fa fa-star third"></span>
                     </span>
-                {{app.heading}} <small>{{app.subHeading}}</small>
+                {{app.heading}}
+                <small>{{app.subHeading}}</small>
             </h1>
         </div>
     </div>
 
     <div class="container">
-        <h2>{{app.title}} <small>{{app.subTitle}}</small></h2>
+        <h2>{{app.title}}
+            <small>{{app.subTitle}}</small>
+        </h2>
 
         <!--TODO: Remove or implement-->
         <mn-scoresheet data-mn-scoresheet-model="scoresheet">

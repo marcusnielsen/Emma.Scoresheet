@@ -5,5 +5,5 @@ var del = require('del');
 var gulp = require('gulp');
 
 gulp.task('clean', function (callback) {
-    del([config.clean], callback);
+  del([config.clean], callback);
 });

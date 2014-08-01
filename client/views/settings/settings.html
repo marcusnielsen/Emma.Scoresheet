@@ -6,20 +6,31 @@
 
 <section class="row">
     <div class="col-xs-6 col-md-8">
-        <div data-ng-bind="login.isLoggedIn"></div>
-        <form name="loginForm">
-            <div class="form-group">
-                <label for="username" data-translate="$USERNAME"></label>
-                <input class="form-control" type="text" id="username" name="username" ng-model="login.user.name" placeholder="{{translate.instant('$USERNAME')}}" required/>
-            </div>
-            <div class="form-group">
-                <label for="password" data-translate="$PASSWORD"></label>
-                <input class="form-control" type="password" id="password" name="password" ng-model="login.user.password" placeholder="{{translate.instant('$PASSWORD')}}" required/>
-            </div>
-            <div>
-                <button class="btn btn-warning" data-translate="$REGISTER" data-ng-click="login.register()" />
-                <button class="btn btn-success pull-right" data-translate="$LOGIN" data-ng-click="login.login()" />
-            </div>
-        </form>
+        <span class="dropdown">
+            <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
+                <span data-translate="$CHANGE_THEME"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li data-ng-repeat="themeItem in theme.themes"
+                    data-ng-class="{'active': theme.isThemeNameSelected(themeItem.name) }">
+                    <a href="" data-ng-click="theme.setTheme(themeItem)" data-ng-bind="themeItem.name"></a>
+                </li>
+            </ul>
+        </span>
+        <span class="dropdown">
+            <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
+                <span data-translate="$CHANGE_LANGUAGE"></span>
+                <span class="caret"></span>
+            </button>
+            <ul class="dropdown-menu">
+                <li data-ng-class="{active: translate.use() === 'en_US'}">
+                    <a href="" data-ng-click="translate.use('en_US')">english</a>
+                </li>
+                <li data-ng-class="{active: translate.use() === 'sv_SE'}">
+                    <a href="" data-ng-click="translate.use('sv_SE')">svenska</a>
+                </li>
+            </ul>
+        </span>
     </div>
 </section>

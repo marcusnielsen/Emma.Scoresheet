@@ -5,7 +5,8 @@
         </a>
     </div>
     <div data-ng-show="input.selected === ''" class="slide-in-down">
-        <a href="javascript:;" data-ng-click="setSelectedOption($index)" class="list-group-item" data-ng-class="{'active': isSelectedOption($index)}" data-ng-repeat="option in input.options">
+        <a href="javascript:;" data-ng-click="setSelectedOption($index)" class="list-group-item"
+           data-ng-class="{'active': isSelectedOption($index)}" data-ng-repeat="option in input.options">
             {{getOptionTitle(option)}}
         </a>
     </div>

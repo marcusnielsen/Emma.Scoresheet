@@ -7,45 +7,18 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-                <a href="" data-ui-sref="{{menu.brandMenuItem.sref}}" class="navbar-brand" data-ng-bind="menu.brandMenuItem.title"></a>
+            <a href="" data-ui-sref="{{menu.brandMenuItem.sref}}" class="navbar-brand"
+               data-ng-bind="menu.brandMenuItem.title"></a>
         </div>
         <nav class="navbar-collapse" data-ng-class="menu.isCollapsed ? 'collapse' : 'in'" role="navigation">
             <ul class="nav navbar-nav">
-                <li data-ng-class="{active: menu.isActive(menuItem.sref)}" data-ng-repeat="menuItem in menu.navigationItems">
+                <li data-ng-class="{active: menu.isActive(menuItem.sref)}"
+                    data-ng-repeat="menuItem in menu.navigationItems">
                     <a href="" data-ui-sref="{{menuItem.sref}}">
-                         <span data-translate="{{menuItem.title}}"></span>
+                        <span data-translate="{{menuItem.title}}"></span>
                     </a>
                 </li>
             </ul>
-            <div class="navbar-right">
-                <div class="nav navbar-nav">
-                    <span class="dropdown">
-                        <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
-                            <span data-translate="$CHANGE_THEME"></span>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                            <li data-ng-repeat="themeItem in theme.themes" data-ng-class="{'active': theme.isThemeNameSelected(themeItem.name) }">
-                                <a href="" data-ng-click="theme.setTheme(themeItem)" data-ng-bind="themeItem.name"></a>
-                            </li>
-                        </ul>
-                    </span>
-                    <span class="dropdown">
-                        <button type="button" class="btn btn-warning navbar-btn dropdown-toggle">
-                            <span data-translate="$CHANGE_LANGUAGE"></span>
-                            <span class="caret"></span>
-                        </button>
-                        <ul class="dropdown-menu">
-                          <li data-ng-class="{active: translate.use() === 'en_US'}">
-                              <a href="" data-ng-click="translate.use('en_US')">english</a>
-                          </li>
-                            <li data-ng-class="{active: translate.use() === 'sv_SE'}">
-                                <a href="" data-ng-click="translate.use('sv_SE')">svenska</a>
-                            </li>
-                        </ul>
-                    </span>
-                </div>
-            </div>
         </nav>
     </div>
 </nav>

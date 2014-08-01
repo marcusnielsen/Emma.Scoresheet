@@ -3,42 +3,42 @@
 var async = require('async');
 
 module.exports = function (userRepository) {
-    var deleteUsers = function (cb) {
-        userRepository.deleteUsers(cb);
-    };
+  var deleteUsers = function (cb) {
+    userRepository.deleteUsers(cb);
+  };
 
-    var seedUsers = function (callback) {
-        var users = [
-            {name: 'User', password: 'user'},
-            {name: 'Admin', password: 'admin'},
-            {name: 'Super', password: 'super'}
-        ];
+  var seedUsers = function (callback) {
+    var users = [
+      {name: 'User', password: 'user'},
+      {name: 'Admin', password: 'admin'},
+      {name: 'Super', password: 'super'}
+    ];
 
-        var dataCollection = [];
+    var dataCollection = [];
 
-        users.forEach(function (user) {
-            userRepository.saveUser(user, function (err, data) {
-                if(err) {
-                    console.error(err);
-                }
+    users.forEach(function (user) {
+      userRepository.saveUser(user, function (err, data) {
+        if (err) {
+          console.error(err);
+        }
 
-                dataCollection.push(data);
+        dataCollection.push(data);
 
-                if(dataCollection.length === users.length) {
-                    callback(null, dataCollection);
-                }
-            });
-        });
-    };
+        if (dataCollection.length === users.length) {
+          callback(null, dataCollection);
+        }
+      });
+    });
+  };
 
-    async.waterfall([
-        deleteUsers,
-        seedUsers],
-        function (err, result) {
-            if(err) {
-                console.error(err);
-            }
+  async.waterfall([
+      deleteUsers,
+      seedUsers],
+    function (err, result) {
+      if (err) {
+        console.error(err);
+      }
 
-            console.log(result);
+      console.log(result);
     });
 };

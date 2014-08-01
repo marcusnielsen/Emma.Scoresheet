@@ -13,15 +13,15 @@ var mnInput = require('./components/mnInput');
 var mnScoresheet = require('./components/mnScoresheet');
 
 var app = angular.module('app', [
-    uiRouterName,
-    'ui.bootstrap',
-    'pascalprecht.translate',
-    theme.name,
-    menu.name,
-    home.name,
-    login.name,
-    mnInput.name,
-    mnScoresheet.name
+  uiRouterName,
+  'ui.bootstrap',
+  'pascalprecht.translate',
+  theme.name,
+  menu.name,
+  home.name,
+  login.name,
+  mnInput.name,
+  mnScoresheet.name
 ]);
 
 app.constant('version', require('../package.json').version);

@@ -1,7 +1,11 @@
 'use strict';
 
-module.exports = [function () {
-    var settings = {};
+module.exports = ['themeFactory', function (themeFactory) {
+  var settings = {};
 
-    return settings;
+  settings.theme = themeFactory;
+
+  return settings;
 }];
+
+

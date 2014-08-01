@@ -1,11 +1,11 @@
 {
-    "$HOME": "Start",
-    "$LOGIN": "Logga in",
-    "$CHANGE_THEME": "Ändra tema",
-    "$CHANGE_LANGUAGE": "Ändra språk",
-    "$SCORESHEET": "Poängformulär",
-    "$LOGIN": "Logga in",
-    "$USERNAME": "Användarnamn",
-    "$PASSWORD": "Lösenord",
-    "$REGISTER": "Registrera"
+  "$HOME": "Start",
+  "$LOGIN": "Logga in",
+  "$CHANGE_THEME": "Ändra tema",
+  "$CHANGE_LANGUAGE": "Ändra språk",
+  "$SCORESHEET": "Poängformulär",
+  "$LOGIN": "Logga in",
+  "$USERNAME": "Användarnamn",
+  "$PASSWORD": "Lösenord",
+  "$REGISTER": "Registrera"
 }
