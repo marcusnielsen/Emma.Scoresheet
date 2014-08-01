@@ -1,5 +1,5 @@
 
 'use strict';
 
-module.exports = angular.module('mn.theme', [])
+module.exports = angular.module('mnTheme', [])
     .factory('mnThemeFactory', require('./theme-factory'));
