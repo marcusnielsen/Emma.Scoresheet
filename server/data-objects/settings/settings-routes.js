@@ -15,10 +15,15 @@ module.exports = function (router) {
       });
     })
     .post(authenticate, function (req, res) {
-      var settingsInput = req.body;
-      settingsInput.userId = req.user.id;
+      var settingsInput = {};
 
-      settingsRepository.save(settingsInput, function (err, data) {
+      settingsInput.userId = req.user.id;
+      settingsInput.settingsCollection = req.body;
+
+      //TODO: Remove.
+      console.dir(settingsInput);
+
+      settingsRepository.createOrUpdate(settingsInput, function (err, data) {
         if (err) { return console.error(err); }
 
         res.json(data);

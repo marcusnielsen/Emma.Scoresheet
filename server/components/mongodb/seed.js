@@ -52,7 +52,7 @@ module.exports = function () {
         userRepository.getUserByName(user.name, function (err, user) {
           var settingsInput = { settingsCollection: settingsCollections[user.name]};
           settingsInput.userId = user.id;
-          settingsRepository.save(settingsInput, function (err, data) {
+          settingsRepository.createOrUpdate(settingsInput, function (err, data) {
             if(err){ console.error(err); }
 
             //TODO: console.log(data.message);

@@ -24,6 +24,8 @@ module.exports = ['$rootScope', '$http', 'mnSettingsFactory', function ($rootSco
     });
 
     factory.selected = theme;
+
+    $rootScope.$broadcast('setting-updated', {name: 'themeName', value: themeName});
   };
 
   factory.isThemeNameSelected = function (themeName) {

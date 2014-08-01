@@ -8,5 +8,6 @@
   "$USERNAME": "Username",
   "$PASSWORD": "Password",
   "$REGISTER": "Register",
-  "$SETTINGS": "Settings"
+  "$SETTINGS": "Settings",
+  "$SAVE": "Save"
 }

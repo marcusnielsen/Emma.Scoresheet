@@ -8,5 +8,6 @@
   "$USERNAME": "Användarnamn",
   "$PASSWORD": "Lösenord",
   "$REGISTER": "Registrera",
-  "$SETTINGS": "Inställningar"
+  "$SETTINGS": "Inställningar",
+  "$SAVE": "Spara"
 }
