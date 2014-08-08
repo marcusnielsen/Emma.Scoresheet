@@ -27,5 +27,5 @@ var app = angular.module('app', [
 ]);
 
 app.constant('version', require('../package.json').version);
-app.config(require('./app-config'));
+app.config(require('./config'));
 app.controller('appController', require('./app-controller'));
