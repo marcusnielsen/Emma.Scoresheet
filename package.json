@@ -7,7 +7,8 @@
   },
   "scripts": {
     "start": "node ./server/server.js",
-    "postinstall": "./node_modules/.bin/napa && ./node_modules/.bin/gulp"
+    "install": "./node_modules/.bin/napa",
+    "postinstall": "gulp build"
   },
   "repository": {
     "type": "git",
