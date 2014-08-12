@@ -21,8 +21,6 @@ module.exports = function (router) {
     .post(function (req, res, next) {
       passport.authenticate('local',
         function (err, user, info) {
-          //TODO: Remove.
-          console.log('Inside /login route.');
           if (err) { return next(err); }
 
           if (!user) { return res.status(401).end(); }

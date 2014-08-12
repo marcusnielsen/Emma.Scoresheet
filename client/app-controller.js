@@ -21,9 +21,6 @@ module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSet
   });
 
   $rootScope.$on('$translateChangeEnd', function () {
-    //TODO: Remove.
-    console.log('Inside $on $translateChangeStart');
-
     $rootScope.$broadcast('setting-updated', {name: 'lcl', value: $translate.use()});
   });
 

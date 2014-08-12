@@ -3,7 +3,7 @@
 var mongoose = require('mongoose');
 var Schema = mongoose.Schema;
 
-var SettingsSchema = new mongoose.Schema({
+var SettingSchema = new mongoose.Schema({
   userId: {
     type: Schema.ObjectId, ref: 'UserSchema'
   },
@@ -20,6 +20,6 @@ var SettingsSchema = new mongoose.Schema({
   }]
 });
 
-var Settings = mongoose.model('Settings', SettingsSchema);
+var Setting = mongoose.model('Setting', SettingSchema);
 
-module.exports = Settings;
+module.exports = Setting;
