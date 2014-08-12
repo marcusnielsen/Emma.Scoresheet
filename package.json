@@ -2,6 +2,7 @@
   "name": "emma-scoresheet",
   "version": "0.0.0",
   "description": "Digital scoresheets web app for EMMA.",
+  "private": true,
   "engines": {
     "node": "0.10.x"
   },
@@ -20,26 +21,7 @@
   },
   "homepage": "https://github.com/marcusnielsen/emma-scoresheet",
   "devDependencies": {
-    "browserify": "^4.2.0",
-    "chai": "^1.9.1",
-    "connect-livereload": "^0.4.0",
-    "del": "^0.1.1",
-    "gulp": "^3.8.6",
-    "gulp-csso": "^0.2.9",
-    "gulp-htmlmin": "^0.1.3",
-    "gulp-jshint": "^1.7.1",
-    "gulp-less": "^1.3.1",
-    "gulp-livereload": "^2.1.0",
-    "gulp-nodemon": "^1.0.4",
-    "gulp-sourcemaps": "^1.1.0",
-    "gulp-watch": "^0.6.9",
-    "mocha": "^1.21.3",
-    "napa": "^0.4.1",
-    "run-sequence": "^0.3.6",
-    "sinon": "^1.10.3",
-    "uglifyify": "^2.5.0",
-    "vinyl-source-stream": "^0.1.1",
-    "watchify": "^0.10.2"
+
   },
   "napa": {
     "angular": "angular/bower-angular",
@@ -64,6 +46,26 @@
     "passport": "^0.2.0",
     "passport-local": "^1.0.0",
     "require-dir": "^0.1.0",
-    "swig": "^1.4.1"
+    "swig": "^1.4.1",
+    "browserify": "^4.2.0",
+    "chai": "^1.9.1",
+    "connect-livereload": "^0.4.0",
+    "del": "^0.1.1",
+    "gulp": "^3.8.6",
+    "gulp-csso": "^0.2.9",
+    "gulp-htmlmin": "^0.1.3",
+    "gulp-jshint": "^1.7.1",
+    "gulp-less": "^1.3.1",
+    "gulp-livereload": "^2.1.0",
+    "gulp-nodemon": "^1.0.4",
+    "gulp-sourcemaps": "^1.1.0",
+    "gulp-watch": "^0.6.9",
+    "mocha": "^1.21.3",
+    "napa": "^0.4.1",
+    "run-sequence": "^0.3.6",
+    "sinon": "^1.10.3",
+    "uglifyify": "^2.5.0",
+    "vinyl-source-stream": "^0.1.1",
+    "watchify": "^0.10.2"
   }
 }
