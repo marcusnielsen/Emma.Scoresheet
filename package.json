@@ -2,10 +2,12 @@
   "name": "emma-scoresheet",
   "version": "0.0.0",
   "description": "Digital scoresheets web app for EMMA.",
+  "engines": {
+    "node": "0.10.x"
+  },
   "scripts": {
     "start": "node ./server/server.js",
-    "postinstall": "./node_modules/napa/bin/napa; ./node_modules/gulp/bin/gulp.js",
-    "test": "mocha server/test"
+    "postinstall": "./node_modules/.bin/napa && ./node_modules/.bin/gulp"
   },
   "repository": {
     "type": "git",
