@@ -18,17 +18,17 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
     $stateProvider
       .state('home', {
         url: '/',
-        templateUrl: 'dist/html/views/home/home.html',
+        templateUrl: 'dist/html/page-components/home/home.html',
         controller: 'mnHomeController'
       })
       .state('settings', {
         url: '/settings',
-        templateUrl: 'dist/html/views/settings/settings.html',
+        templateUrl: 'dist/html/page-components/settings/settings.html',
         controller: 'mnSettingsController'
       })
       .state('login', {
         url: '/login',
-        templateUrl: 'dist/html/views/login/login.html',
+        templateUrl: 'dist/html/page-components/login/login.html',
         controller: 'mnLoginController'
       });
   }];

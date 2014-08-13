@@ -7,10 +7,10 @@ require('angular-translate-loader-static/angular-translate-loader-static-files')
 var uiRouterName = require('angular-ui-router');
 var theme = require('./components/theme');
 var menu = require('./components/menu');
-var home = require('./views/home');
-var login = require('./views/login');
+var home = require('./page-components/home');
+var login = require('./page-components/login');
 var mnInput = require('./components/mnInput');
-var mnSettings = require('./views/settings');
+var mnSettings = require('./page-components/settings');
 var mnScoresheet = require('./components/mnScoresheet');
 
 var app = angular.module('app', [
