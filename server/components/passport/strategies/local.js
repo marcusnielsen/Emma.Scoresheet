@@ -6,16 +6,15 @@ var LocalStrategy = require('passport-local').Strategy;
 var User = require('../../../data-objects/user/user-model');
 
 passport.use(new LocalStrategy({
-    usernameField: 'name',
+    usernameField: 'email',
     passwordField: 'password'
   },
-  function (name, password, done) {
-    User.findOne({ name: name }, function (err, user) {
+  function (email, password, done) {
+    User.findOne({ email: email }, function (err, user) {
       if (err) {
         return done(err);
       }
-      console.log(err);
-      console.log(user);
+
       // No user found with that name
       if (!user) {
         return done(null, false);

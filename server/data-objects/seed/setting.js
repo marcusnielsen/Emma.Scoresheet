@@ -12,11 +12,11 @@ settingSeed.delete = function (cb) {
 
 settingSeed.seed = function (cb) {
   config.users.forEach(function (userConfig) {
-    userRepository.getUserByName(userConfig.name, function (err, userModel) {
+    userRepository.getByName(userConfig.name, function (err, userModel) {
       if(err) { return console.error(err); }
 
       var settingsInput = {
-        settingsCollection: userConfig.settings,
+        settingCollection: userConfig.settingCollection,
         userId: userModel.id
       };
 

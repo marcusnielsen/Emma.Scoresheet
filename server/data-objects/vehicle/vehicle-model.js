@@ -7,7 +7,7 @@ var VehicleSchema = new mongoose.Schema({
   userId: {
     type: Schema.ObjectId, ref: 'UserSchema'
   },
-  vehiclesCollection: [{
+  vehicleCollection: [{
     licensePlates: [{
       type: String
       //TODO: unique: true,

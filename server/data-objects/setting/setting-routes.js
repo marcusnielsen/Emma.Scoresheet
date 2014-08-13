@@ -4,7 +4,7 @@ var settingRepository = require('./setting-repository');
 var authenticate = require('../../components/passport/authenticate');
 
 module.exports = function (router) {
-  router.route('/settings/:user_id')
+  router.route('/setting/:user_id')
     .get(authenticate, function (req, res) {
       settingRepository.get(req.user.id, function (err, setting) {
         if(err){ return console.error(err); }
@@ -16,7 +16,7 @@ module.exports = function (router) {
       var settingInput = {};
 
       settingInput.userId = req.user.id;
-      settingInput.settingsCollection = req.body;
+      settingInput.settingCollection = req.body;
 
       settingRepository.createOrUpdate(settingInput, function (err, data) {
         if (err) { return console.error(err); }

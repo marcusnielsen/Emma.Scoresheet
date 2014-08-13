@@ -6,7 +6,7 @@ var config = require('./config');
 var userSeed = {};
 
 userSeed.delete = function (cb) {
-  userRepository.deleteUsers(cb);
+  userRepository.deleteAll(cb);
 };
 
 userSeed.seed = function (cb) {
@@ -14,9 +14,9 @@ userSeed.seed = function (cb) {
 
   config.users.forEach(function (user) {
 
-    var userInput = {name: user.name, password: user.password};
+    var userInput = {name: user.email, password: user.password};
 
-    userRepository.saveUser(userInput, function (err, data) {
+    userRepository.save(userInput, function (err, data) {
       if (err) { return console.error(err); }
 
       dataCollection.push(data);

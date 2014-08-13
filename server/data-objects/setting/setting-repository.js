@@ -13,12 +13,12 @@ settingRepository.createOrUpdate = function (settingInput, cb) {
     }
 
     setting.userId = settingInput.userId;
-    setting.settingsCollection = settingInput.settingsCollection;
+    setting.settingCollection = settingInput.settingCollection;
 
     setting.save(function(err) {
       if(err) { return cb(err); }
 
-      cb(null, { message: 'Saved settings for user ID: ' + setting.userId });
+      cb(null, { userId: setting.userId });
     });
   });
 

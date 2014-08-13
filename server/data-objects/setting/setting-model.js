@@ -7,7 +7,7 @@ var SettingSchema = new mongoose.Schema({
   userId: {
     type: Schema.ObjectId, ref: 'UserSchema'
   },
-  settingsCollection: [{
+  settingCollection: [{
     name: {
     type: String
     //TODO: unique: true

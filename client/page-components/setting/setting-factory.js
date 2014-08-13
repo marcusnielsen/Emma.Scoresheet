@@ -3,30 +3,30 @@
 var _ = require('lodash');
 
 module.exports = ['$rootScope', '$http', 'mnLoginFactory', function ($rootScope, $http, mnLoginFactory) {
-  var settings = {};
+  var setting = {};
 
-  settings.settingsCollection = '';
+  setting.settingCollection = '';
 
-  settings.loadSettings = function () {
+  setting.loadSettings = function () {
     if(mnLoginFactory.user.id === '') { return console.error('user.id is not set.'); }
 
-    return $http.get('api/settings/' + mnLoginFactory.user.id).then(function (res) {
-      settings.settingsCollection = res.data.settingsCollection;
-      $rootScope.$broadcast('settings-changed');
+    return $http.get('api/setting/' + mnLoginFactory.user.id).then(function (res) {
+      setting.settingCollection = res.data.settingCollection;
+      $rootScope.$broadcast('setting-changed');
     });
   };
 
-  settings.save = function () {
+  setting.save = function () {
     if(mnLoginFactory.user.id === '') { return console.error('user.id is not set.'); }
 
-    $http.post('api/settings/' + mnLoginFactory.user.id, settings.settingsCollection).then(function (res) {
-      //TODO: Replace with proper messaging.
+    $http.post('api/setting/' + mnLoginFactory.user.id, setting.settingCollection).then(function (res) {
+      //TODO: Replace with proper handling.
       console.log('Setting saved.');
     });
   };
 
   $rootScope.$on('login-logged-in', function (event, args) {
-    settings.loadSettings();
+    setting.loadSettings();
   });
 
   $rootScope.$on('setting-updated', function (event, args) {
@@ -35,12 +35,12 @@ module.exports = ['$rootScope', '$http', 'mnLoginFactory', function ($rootScope,
 
     var newSetting = args;
 
-    var oldSetting = _.find(settings.settingsCollection, {'name': newSetting.name});
+    var oldSetting = _.find(setting.settingCollection, {'name': newSetting.name});
 
     oldSetting.value = newSetting.value;
   });
 
-  return settings;
+  return setting;
 }];
 
 

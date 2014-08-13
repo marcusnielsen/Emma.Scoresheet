@@ -2,7 +2,7 @@
 
 var _ = require('lodash');
 
-module.exports = ['$rootScope', '$http', 'mnSettingsFactory', function ($rootScope, $http, mnSettingsFactory) {
+module.exports = ['$rootScope', '$http', 'mnSettingFactory', function ($rootScope, $http, mnSettingFactory) {
   var factory = {};
 
   factory.selected = {
@@ -32,8 +32,8 @@ module.exports = ['$rootScope', '$http', 'mnSettingsFactory', function ($rootSco
     return factory.selected.name === themeName;
   };
 
-  $rootScope.$on('settings-changed', function (event, args) {
-    var themeSetting = _.find(mnSettingsFactory.settingsCollection, function (setting) {
+  $rootScope.$on('setting-changed', function (event, args) {
+    var themeSetting = _.find(mnSettingFactory.settingCollection, function (setting) {
       return setting.name === 'themeName';
     });
 

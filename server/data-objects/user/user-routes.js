@@ -6,8 +6,7 @@ var passport = require('passport');
 module.exports = function (router) {
   router.route('/users')
     .post(function (req, res) {
-      console.log('req.body: ' + req.body.name + req.body.password);
-      userRepository.saveUser(req.body, function (err, data) {
+      userRepository.save(req.body, function (err, data) {
         if (err) {
           console.error(err);
           return;
@@ -34,18 +33,6 @@ module.exports = function (router) {
         }
       )(req,res,next);
     });
-
-  // TODO: Fix code when needed.
-  /*.get(authenticate, function (req, res) {
-   userRepository.getUsers(function (err, data) {
-   if(err) {
-   console.error(err);
-   return;
-   }
-
-   res.json(data);
-   });
-   });*/
 
   router.route('logout')
     .get(function (req, res) {

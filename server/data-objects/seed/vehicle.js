@@ -12,11 +12,11 @@ vehicleSeed.delete = function (cb) {
 
 vehicleSeed.seed = function (cb) {
   config.users.forEach(function (userConfig) {
-    userRepository.getUserByName(userConfig.name, function (err, userModel) {
+    userRepository.getByName(userConfig.name, function (err, userModel) {
       if(err) { return console.error(err); }
 
       var vehicleInput = {
-        vehiclesCollection: userConfig.vehicles,
+        vehicleCollection: userConfig.vehicleCollection,
         userId: userModel.id
       };
 
