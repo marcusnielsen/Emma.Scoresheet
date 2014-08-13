@@ -28,6 +28,9 @@ var all = {
   // Should we populate the DB with sample data?
   seedDB: false,
 
+  // Should we let the server inject lr script?
+  connectLiveReload: true,
+
   // Secret for session, you will want to change this and make it an environment variable
   secrets: {
     session: process.env.SESSION_SECRET || 'some-session-secret'

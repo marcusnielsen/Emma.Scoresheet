@@ -34,7 +34,9 @@ module.exports = function (config) {
   app.use(flash());
 
   // TODO: Only use this for development server.
-  app.use(livereload());
+  if(config.connectLiveReload) {
+    app.use(livereload());
+  }
 
   //TODO: app.use(favicon(path.join(config.root, 'public', 'favicon.ico')));
   var serverViewRouter = express.Router();
