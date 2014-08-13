@@ -4,14 +4,14 @@ var livereload = require('gulp-livereload');
 var gulp = require('gulp');
 
 var bundleHelper = function (bundler) {
-  //TODO: Fix non-minimized source maps.
-  bundler.transform({
-    global: true
-  }, 'uglifyify');
+  bundler.add(config.browserify.source);
+
+  //TODO: Make below code work! Try upgrading minifyify later on.
+  //bundler.plugin('minifyify', {map: 'bundle.map.json', output: 'bundle.map.json'});
 
   var makeBundle = function () {
     bundler
-      .bundle({debug: true})
+      .bundle()
       .pipe(vinylSourceStream(config.browserify.dest.filename))
       .pipe(gulp.dest(config.browserify.dest.path))
       .pipe(livereload({auto: false}));

@@ -12,7 +12,8 @@ var config = {
     'dest': {
       'filename': 'bundle.js',
       'path': './dist/js'
-    }
+    },
+    sourceMapFileName: 'bundle.map.json'
   },
   'html': {
     'source': './client/**/*.html',

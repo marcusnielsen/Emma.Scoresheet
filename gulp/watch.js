@@ -3,9 +3,11 @@
 var config = require('./config');
 var gulp = require('gulp');
 var livereload = require('gulp-livereload');
+var browserify = require('browserify');
 var watchify = require('watchify');
 var nodemon = require('gulp-nodemon');
 var gulpWatch = require('gulp-watch');
+var _ = require('lodash');
 
 require('./subtasks/clean');
 require('./subtasks/browserify');
@@ -14,8 +16,9 @@ require('./subtasks/html');
 require('./subtasks/moveLocalization');
 
 gulp.task('watch', function () {
+  var browserifyArgs = { debug: true };
+  var bundler = watchify(browserify(_.merge(watchify.args, browserifyArgs)));
 
-  var bundler = watchify(config.browserify.source);
   var makeBundle = require('./bundleHelper')(bundler);
   bundler.on('update', makeBundle);
 
