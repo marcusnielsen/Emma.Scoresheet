@@ -6,6 +6,15 @@ This is a pet project of mine where I will try to make a small portal for scorin
 
 I will try to use MEAN stack best practices as done by others.
 
+Current status
+--------------
+* Gulp tasks are stable.
+* Project can be deployed to heroku (if you set up a mongoDB with an environment variable) or locally.
+* The project will seed data so you can easily see the current state of the product.
+
+* The project is still not yet read to demo.
+* No tests done yet.
+
 Prerequisites
 ------------
 ###Core
@@ -25,17 +34,17 @@ To install
 * Install the prerequisites.
 * Git clone this repository.
 * Run npm install.
-* Start with 'npm start' or with 'gulp watch' for development mode.
-
+* Start with 'node server/server.js' or with 'gulp watch' for development mode.
 
 About the code
 --------------
-###Development tools
+###Development-cycle tools
 * Livereload.
 * Nodemon.
+* Seedable repository.
 
 ###Build tools
-* Gulp.
+* Gulp. (Note that currently minification of JS is turned off until needed due to bad support in toolchain.)
 * Browserify.
 
 ###Structure
@@ -45,5 +54,6 @@ Module-based.
 * Localized.
 * Secure login via passport.
 * Change bootswatch theme in runtime.
-* Scoresheet forms are built from JSON.
-* Each form input type is rendered as its own directive.
+* Configurable modules.
+* Scoresheet forms are built from JSON. (Not yet active, but see previous version for the working demo product.)
+* Each form input type is rendered as its own directive. (As above.)
