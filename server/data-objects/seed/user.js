@@ -2,6 +2,7 @@
 
 var userRepository = require('../user/user-repository');
 var config = require('./config');
+var _ = require('lodash');
 
 var userSeed = {};
 
@@ -14,7 +15,7 @@ userSeed.seed = function (cb) {
 
   config.users.forEach(function (user) {
 
-    var userInput = {name: user.email, password: user.password};
+    var userInput = _.pick(user, ['name', 'email', 'password', 'role']);
 
     userRepository.save(userInput, function (err, data) {
       if (err) { return console.error(err); }

@@ -6,7 +6,8 @@ module.exports = ['$state', function ($state) {
     navigationItems: [
       {title: '$HOME', sref: 'home'},
       {title: '$LOGIN', sref: 'login'},
-      {title: '$SETTINGS', sref: 'settings'}
+      {title: '$SETTINGS', sref: 'setting'},
+      {title: '$USER', sref: 'user'}
     ]
   };
 

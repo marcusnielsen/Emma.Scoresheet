@@ -4,10 +4,11 @@
   "$CHANGE_THEME": "Ändra tema",
   "$CHANGE_LANGUAGE": "Ändra språk",
   "$SCORESHEET": "Poängformulär",
-  "$LOGIN": "Logga in",
   "$USERNAME": "Användarnamn",
   "$PASSWORD": "Lösenord",
   "$REGISTER": "Registrera",
   "$SETTINGS": "Inställningar",
-  "$SAVE": "Spara"
+  "$SAVE": "Spara",
+  "$EMAIL": "E-post",
+  "$USER": "Användare"
 }

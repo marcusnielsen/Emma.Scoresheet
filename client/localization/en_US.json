@@ -4,10 +4,11 @@
   "$CHANGE_THEME": "Change theme",
   "$CHANGE_LANGUAGE": "Change language",
   "$SCORESHEET": "Scoresheet",
-  "$LOGIN": "Login",
   "$USERNAME": "Username",
   "$PASSWORD": "Password",
   "$REGISTER": "Register",
   "$SETTINGS": "Settings",
-  "$SAVE": "Save"
+  "$SAVE": "Save",
+  "$EMAIL": "Email",
+  "$USER": "Användare"
 }

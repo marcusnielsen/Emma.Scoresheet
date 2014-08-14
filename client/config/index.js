@@ -30,5 +30,10 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
         url: '/login',
         templateUrl: 'dist/html/page-components/login/login.html',
         controller: 'mnLoginController'
+      })
+      .state('user', {
+        url: '/user',
+        templateUrl: 'dist/html/page-components/user/user.html',
+        controller: 'mnUserController'
       });
   }];

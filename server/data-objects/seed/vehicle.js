@@ -12,7 +12,7 @@ vehicleSeed.delete = function (cb) {
 
 vehicleSeed.seed = function (cb) {
   config.users.forEach(function (userConfig) {
-    userRepository.getByName(userConfig.name, function (err, userModel) {
+    userRepository.getByEmail(userConfig.email, function (err, userModel) {
       if(err) { return console.error(err); }
 
       var vehicleInput = {

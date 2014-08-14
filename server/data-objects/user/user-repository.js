@@ -10,8 +10,8 @@ userRepository.save = function (userInput, cb) {
   user.save(modelHelper.onSave(userInput, cb));
 };
 
-userRepository.getByName = function (name, cb) {
-  User.findOne({name: name}, modelHelper.onFind(cb));
+userRepository.getByEmail = function (email, cb) {
+  User.findOne({email: email}, modelHelper.onFind(cb));
 };
 
 userRepository.deleteAll = function (cb) {
