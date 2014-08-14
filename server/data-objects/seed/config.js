@@ -3,8 +3,10 @@
 module.exports = {
   users: [
     {
+      name: 'Sverker Svensson',
       email: 'user@se',
       password: 'user@se',
+      role: 'user',
       settingCollection: [
         {name: 'lcl', value: 'sv_SE'},
         {name: 'themeName', value: 'cosmo'}
@@ -14,8 +16,10 @@ module.exports = {
       ]
     },
     {
+      name: 'Johnny English',
       email: 'user@en',
       password: 'user@en',
+      role: 'user',
       settingCollection: [
         {name: 'lcl', value: 'en_US'},
         {name: 'themeName', value: 'slate'}
