@@ -1,13 +1,12 @@
 'use strict';
 
-module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, $http, mnUserFactory) {
+module.exports = ['$rootScope', '$http', function ($rootScope, $http) {
   var loginFactory = {};
 
   var onLoggedIn = function (userData) {
     loginFactory.clearLoginData();
     loginFactory.isLoggedIn = true;
-    mnUserFactory.userData = userData;
-    $rootScope.$broadcast('login-logged-in');
+    $rootScope.$broadcast('login-logged-in', userData);
   };
 
   loginFactory.register = function () {
