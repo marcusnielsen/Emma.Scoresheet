@@ -2,6 +2,8 @@
 
 var _ = require('lodash');
 
+//TODO: Refactor! Too much functionality in the controller.
+
 module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSettingFactory', 'mnScoresheetFactory',
   function ($rootScope, $scope, $translate, mnThemeFactory, mnSettingFactory, mnScoresheetFactory) {
   $scope.app = {
@@ -19,7 +21,6 @@ module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSet
 
     $translate.use(lclSetting.value);
   });
-
 
   //TODO: Avoid calling the first time since that is the initialization and not an update of the setting
   //TODO: Check if $translate.use() !== lclSetting.value?

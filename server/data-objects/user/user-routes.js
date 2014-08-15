@@ -27,7 +27,7 @@ module.exports = function (router) {
           req.logIn(user, function(err) {
             if (err) { return next(err); }
 
-            //TODO: Send back a 200 status when done with testing stuff.
+            //TODO: Send back the correct client data when done with testing stuff.
             return res.json(req.user);
           });
         }
@@ -35,7 +35,7 @@ module.exports = function (router) {
     });
 
   router.route('logout')
-    .get(function (req, res) {
+    .post(function (req, res) {
       req.logout();
       res.send(200);
     });

@@ -31,7 +31,7 @@ module.exports = ['$rootScope', '$http', 'mnLoginFactory', function ($rootScope,
 
   $rootScope.$on('setting-updated', function (event, args) {
     //TODO: Refactor to a function call. Avoid this check if possible. $translate event broadcaster needs to change.
-    if(mnLoginFactory.user.id === '') { return console.error('user.id is not set.'); }
+    if(!mnLoginFactory.isLoggedIn) { return; }
 
     var newSetting = args;
 

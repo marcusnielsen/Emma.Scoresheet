@@ -7,13 +7,13 @@
         <div data-ng-bind="login.isLoggedIn"></div>
         <form name="loginForm">
             <div class="form-group">
-                <label for="username" data-translate="$USERNAME"></label>
-                <input class="form-control" type="text" id="username" name="username" ng-model="login.user.name"
-                       placeholder="{{translate.instant('$USERNAME')}}" required/>
+                <label for="username" data-translate="$EMAIL"></label>
+                <input class="form-control" type="text" id="username" name="username" ng-model="login.loginData.email"
+                       placeholder="{{translate.instant('$EMAIL')}}" required/>
             </div>
             <div class="form-group">
                 <label for="password" data-translate="$PASSWORD"></label>
-                <input class="form-control" type="password" id="password" name="password" ng-model="login.user.password"
+                <input class="form-control" type="password" id="password" name="password" ng-model="login.loginData.password"
                        placeholder="{{translate.instant('$PASSWORD')}}" required/>
             </div>
             <div>
