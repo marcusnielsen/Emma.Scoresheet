@@ -11,7 +11,7 @@ module.exports = ['$rootScope', function ($rootScope) {
     // TODO: Remove once the server sends the correct data.
     userFactory.userData.id = userFactory.userData._id;
 
-    $rootScope.$broadcast('user-loaded');
+    $rootScope.$broadcast('user-loaded', userFactory.userData);
   });
 
   return userFactory;

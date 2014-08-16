@@ -5,7 +5,7 @@ var routeHelper = {};
 routeHelper.onGetByUserId = function (repository) {
 
   var getCallback = function (req, res) {
-    repository.get(req.user.id, function (err, data) {
+    repository.getAllByUserId(req.user.id, function (err, data) {
       if(err){ return console.error(err); }
 
       res.json(data);

@@ -10,5 +10,6 @@
   "$SETTINGS": "Settings",
   "$SAVE": "Save",
   "$EMAIL": "Email",
-  "$USER": "Användare"
+  "$USER": "User",
+  "$VEHICLES": "Vehicles"
 }

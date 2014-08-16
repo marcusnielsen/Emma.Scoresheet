@@ -7,7 +7,8 @@ module.exports = ['$state', function ($state) {
       {title: '$HOME', sref: 'home'},
       {title: '$LOGIN', sref: 'login'},
       {title: '$SETTINGS', sref: 'setting'},
-      {title: '$USER', sref: 'user'}
+      {title: '$USER', sref: 'user'},
+      {title: '$VEHICLES', sref: 'vehicle'}
     ]
   };
 

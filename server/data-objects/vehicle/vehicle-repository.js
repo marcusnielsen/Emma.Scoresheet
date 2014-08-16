@@ -6,6 +6,10 @@ var Vehicle = require('./vehicle-model');
 var vehicleRepository = {};
 
 vehicleRepository.save = function (vehicleInput, cb) {
+
+  //TODO: VehicleInput should be added to an existing vehicleCollection if userId already exists.
+  //TODO: userId must be unique.
+
   var vehicle = new Vehicle(vehicleInput);
   vehicle.save(modelHelper.onSave(vehicle, cb));
 };

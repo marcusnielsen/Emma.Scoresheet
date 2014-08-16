@@ -2,9 +2,12 @@
 
 var seeders = [];
 
+// TODO: Drop the database instead of repository deletes. Remove the deleteAll functions from repository for safety measures.
+
 seeders.push(require('./user'));
-seeders.push(require('./setting'));
 seeders.push(require('./vehicle'));
+seeders.push(require('./setting'));
+
 
 var asyncCallbacks = [];
 
@@ -17,6 +20,8 @@ seeders.forEach(function (seeder) {
 });
 
 var async = require('async');
+
+//TODO: Last function gets called twice! Fix bug!
 
 async.waterfall(asyncCallbacks, function (err) {
   if (err) { return console.error(err); }
