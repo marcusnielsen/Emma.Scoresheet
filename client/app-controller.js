@@ -25,7 +25,7 @@ module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSet
   //TODO: Avoid calling the first time since that is the initialization and not an update of the setting
   //TODO: Check if $translate.use() !== lclSetting.value?
   $rootScope.$on('$translateChangeEnd', function () {
-    $rootScope.$broadcast('setting-updated', {name: 'lcl', value: $translate.use()});
+    $rootScope.$emit('setting-updated', {name: 'lcl', value: $translate.use()});
   });
 
 }];

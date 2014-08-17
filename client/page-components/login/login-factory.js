@@ -6,7 +6,7 @@ module.exports = ['$rootScope', '$http', function ($rootScope, $http) {
   var onLoggedIn = function (userData) {
     loginFactory.clearLoginData();
     loginFactory.isLoggedIn = true;
-    $rootScope.$broadcast('login-logged-in', userData);
+    $rootScope.$emit('login-logged-in', userData);
   };
 
   loginFactory.register = function () {
@@ -23,7 +23,7 @@ module.exports = ['$rootScope', '$http', function ($rootScope, $http) {
 
   loginFactory.logout = function () {
     loginFactory.isLoggedIn = false;
-    $rootScope.$broadcast('login-logged-out');
+    $rootScope.$emit('login-logged-out');
   };
 
   loginFactory.clearLoginData = function () {

@@ -12,7 +12,7 @@ module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, 
 
     return $http.get('api/setting/' + mnUserFactory.userData.id).then(function (res) {
       setting.settingCollection = res.data.settingCollection;
-      $rootScope.$broadcast('setting-changed');
+      $rootScope.$emit('setting-changed');
     });
   };
 
