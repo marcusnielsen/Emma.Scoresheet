@@ -6,10 +6,6 @@ var _ = require('lodash');
 
 var userSeed = {};
 
-userSeed.delete = function (cb) {
-  userRepository.deleteAll(cb);
-};
-
 userSeed.seed = function (cb) {
   var dataCollection = [];
 
