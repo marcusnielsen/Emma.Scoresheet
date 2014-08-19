@@ -7,6 +7,8 @@ var config = require('./config');
 var vehicleSeed = {};
 
 vehicleSeed.seed = function (cb) {
+  var usersCount = 0;
+
   config.users.forEach(function (userConfig) {
     userRepository.getByEmail(userConfig.email, function (err, userModel) {
       if(err) { return console.error(err); }
@@ -19,7 +21,11 @@ vehicleSeed.seed = function (cb) {
       vehicleRepository.save(vehicleInput, function (err, data) {
         if(err){ console.error(err); }
 
-        cb();
+        usersCount++;
+
+        if(usersCount === config.users.length) {
+          cb();
+        }
       });
     });
   });

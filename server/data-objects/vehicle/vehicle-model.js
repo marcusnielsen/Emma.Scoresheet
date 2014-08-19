@@ -10,16 +10,12 @@ var VehicleSchema = new mongoose.Schema({
   vehicleCollection: [{
     licensePlates: [{
       type: String
-      //TODO: unique: true,
-      //TODO: required: true
     }],
     brand: {
       type: String
-      //TODO: required: true
     },
     model: {
       type: String
-      //TODO: required: true
     }
   }]
 });

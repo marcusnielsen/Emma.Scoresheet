@@ -11,5 +11,6 @@
   "$SAVE": "Save",
   "$EMAIL": "Email",
   "$USER": "User",
-  "$VEHICLES": "Vehicles"
+  "$VEHICLES": "Vehicles",
+  "$COMPETITIONS": "Competitions"
 }

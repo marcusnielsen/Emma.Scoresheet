@@ -14,7 +14,7 @@ modelHelper.onSave = function (modelItem, cb) {
 };
 
 modelHelper.onFind = function (cb) {
-  var findOneCallback = function (err, result) {
+  var findCallback = function (err, result) {
     if (err) {
       cb(err);
       return;
@@ -23,7 +23,7 @@ modelHelper.onFind = function (cb) {
     cb(null, result);
   };
 
-  return findOneCallback;
+  return findCallback;
 };
 
 modelHelper.onRemove = function (cb) {

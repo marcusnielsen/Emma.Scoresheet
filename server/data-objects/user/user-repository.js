@@ -14,8 +14,4 @@ userRepository.getByEmail = function (email, cb) {
   User.findOne({email: email}, modelHelper.onFind(cb));
 };
 
-userRepository.deleteAll = function (cb) {
-  User.find({}).remove(modelHelper.onRemove(cb));
-};
-
 module.exports = userRepository;

@@ -1,5 +1,5 @@
 'use strict';
 
-module.exports = ['$scope', 'mnvehicleFactory', function ($scope, mnvehicleFactory) {
-  $scope.vehicle = mnvehicleFactory;
+module.exports = ['$scope', 'mnVehicleFactory', function ($scope, mnVehicleFactory) {
+  $scope.vehicle = mnVehicleFactory;
 }];

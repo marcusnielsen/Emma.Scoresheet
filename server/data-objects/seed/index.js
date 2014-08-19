@@ -9,6 +9,7 @@ mongoose.connection.db.dropDatabase(function() {
   seeders.push(require('./user'));
   seeders.push(require('./vehicle'));
   seeders.push(require('./setting'));
+  seeders.push(require('./competition'));
 
   var asyncCallbacks = [];
 

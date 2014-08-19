@@ -7,6 +7,8 @@ var config = require('./config');
 var settingSeed = {};
 
 settingSeed.seed = function (cb) {
+  var usersCount = 0;
+
   config.users.forEach(function (userConfig) {
     userRepository.getByEmail(userConfig.email, function (err, userModel) {
       if(err) { return console.error(err); }
@@ -19,7 +21,11 @@ settingSeed.seed = function (cb) {
       settingRepository.createOrUpdate(settingsInput, function (err, data) {
         if(err){ console.error(err); }
 
-        cb();
+        usersCount++;
+
+        if(usersCount === config.users.length) {
+          cb();
+        }
       });
     });
   });

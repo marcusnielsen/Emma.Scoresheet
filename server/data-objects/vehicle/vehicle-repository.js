@@ -22,8 +22,4 @@ vehicleRepository.getByUserIdAndLicensePlate = function(userIdInput, licensePlat
   Vehicle.findOne({userId: userIdInput, licensePlates: licensePlateInput}, modelHelper.onFind(cb));
 };
 
-vehicleRepository.deleteAll = function (cb) {
-  Vehicle.find({}).remove(modelHelper.onRemove(cb));
-};
-
 module.exports = vehicleRepository;

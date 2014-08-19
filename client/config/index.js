@@ -39,6 +39,11 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
       .state('vehicle', {
         url: '/vehicle',
         templateUrl: 'dist/html/page-components/vehicle/vehicle.html',
-        controller: 'mnvehicleController'
+        controller: 'mnVehicleController'
+      })
+      .state('competition', {
+        url: '/competition',
+        templateUrl: 'dist/html/page-components/competition/competition.html',
+        controller: 'mnCompetitionController'
       });
   }];

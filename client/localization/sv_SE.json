@@ -11,5 +11,6 @@
   "$SAVE": "Spara",
   "$EMAIL": "E-post",
   "$USER": "Användare",
-  "$VEHICLES": "Fordon"
+  "$VEHICLES": "Fordon",
+  "$COMPETITIONS": "Tävlingar"
 }

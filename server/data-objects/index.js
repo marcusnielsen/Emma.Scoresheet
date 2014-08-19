@@ -11,4 +11,5 @@ module.exports = function (router) {
   require('./user/user-routes')(router);
   require('./setting/setting-routes')(router);
   require('./vehicle/vehicle-routes')(router);
+  require('./competition/competition-routes')(router);
 };

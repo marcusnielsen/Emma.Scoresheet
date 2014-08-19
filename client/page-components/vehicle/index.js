@@ -1,5 +1,5 @@
 'use strict';
 
 module.exports = angular.module('mnVehicle', [])
-  .factory('mnvehicleFactory', require('./vehicle-factory'))
-  .controller('mnvehicleController', require('./vehicle-controller'));
+  .factory('mnVehicleFactory', require('./vehicle-factory'))
+  .controller('mnVehicleController', require('./vehicle-controller'));

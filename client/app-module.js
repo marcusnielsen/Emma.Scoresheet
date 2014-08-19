@@ -8,6 +8,7 @@ var uiRouterName = require('angular-ui-router');
 var theme = require('./components/theme');
 var menu = require('./components/menu');
 var home = require('./page-components/home');
+var competition = require('./page-components/competition');
 var login = require('./page-components/login');
 var user = require('./page-components/user');
 var vehicle = require('./page-components/vehicle');
@@ -22,6 +23,7 @@ var app = angular.module('app', [
   theme.name,
   menu.name,
   home.name,
+  competition.name,
   login.name,
   user.name,
   vehicle.name,

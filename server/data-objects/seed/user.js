@@ -7,18 +7,18 @@ var _ = require('lodash');
 var userSeed = {};
 
 userSeed.seed = function (cb) {
-  var dataCollection = [];
+  var usersCount = 0;
 
   config.users.forEach(function (user) {
 
     var userInput = _.pick(user, ['name', 'email', 'password', 'role']);
 
     userRepository.save(userInput, function (err, data) {
-      if (err) { return console.error(err); }
+      if(err) { return console.error(err); }
 
-      dataCollection.push(data);
+      usersCount++;
 
-      if (dataCollection.length === config.users.length) {
+      if(usersCount === config.users.length) {
         cb();
       }
     });

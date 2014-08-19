@@ -1,6 +1,20 @@
 'use strict';
 
 module.exports = {
+  competitions: [
+    {
+      title: 'SM Final 2014',
+      startDate: new Date(),
+      judges: ['user@se'],
+      participants: ['user@en']
+    },
+    {
+      title: 'Bräcke',
+      startDate: new Date(),
+      judges: ['user@en'],
+      participants: ['user@se']
+    }
+  ],
   users: [
     {
       name: 'Sverker Svensson',

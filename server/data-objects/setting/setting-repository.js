@@ -21,7 +21,6 @@ settingRepository.createOrUpdate = function (settingInput, cb) {
       cb(null, { userId: setting.userId });
     });
   });
-
 };
 
 settingRepository.get = function (userIdInput, cb) {
@@ -29,12 +28,6 @@ settingRepository.get = function (userIdInput, cb) {
     if(err) { return cb(err); }
 
     return cb(null, setting);
-  });
-};
-
-settingRepository.deleteAll = function (cb) {
-  Setting.find({}).remove(function () {
-    cb();
   });
 };
 
