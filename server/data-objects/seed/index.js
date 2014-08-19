@@ -1,21 +1,19 @@
 'use strict';
 
-var mongoose = require('mongoose');
 var async = require('async');
+var dropCollections = require('./helpers/dropCollections');
 
-mongoose.connection.db.dropDatabase(function() {
-  var seeders = [];
+var seeders = [];
 
-  seeders.push(require('./user'));
-  seeders.push(require('./vehicle'));
-  seeders.push(require('./setting'));
-  seeders.push(require('./competition'));
+seeders.push(require('./user'));
+seeders.push(require('./vehicle'));
+seeders.push(require('./setting'));
+seeders.push(require('./competition'));
 
-  var asyncCallbacks = [];
+var asyncCallbacks = [dropCollections];
 
-  seeders.forEach(function (seeder) {
-    asyncCallbacks.push(seeder.seed);
-  });
-
-  async.series(asyncCallbacks);
+seeders.forEach(function (seeder) {
+  asyncCallbacks.push(seeder.seed);
 });
+
+async.series(asyncCallbacks);
