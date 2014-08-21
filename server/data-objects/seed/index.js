@@ -9,6 +9,7 @@ seeders.push(require('./user'));
 seeders.push(require('./vehicle'));
 seeders.push(require('./setting'));
 seeders.push(require('./competition'));
+seeders.push(require('./scoresheet-template'));
 
 var asyncCallbacks = [dropCollections];
 

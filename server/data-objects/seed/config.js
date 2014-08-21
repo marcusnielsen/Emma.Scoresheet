@@ -1,5 +1,7 @@
 'use strict';
 
+//TODO: Divide into multiple subconfigs.
+
 module.exports = {
   competitions: [
     {
@@ -13,6 +15,20 @@ module.exports = {
       startDate: new Date(),
       judges: ['user@en'],
       participants: ['user@se']
+    }
+  ],
+  scoresheetTemplates: [
+    {
+      title: 'Sound quality: Advanced and Master',
+      scoreSheetTemplateData: {
+        sections: [{
+          title: String,
+          inputs: [{
+            title: String,
+            type: String,
+            options: [String]
+          }]
+        }]
     }
   ],
   users: [

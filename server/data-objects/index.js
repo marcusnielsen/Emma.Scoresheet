@@ -12,4 +12,5 @@ module.exports = function (router) {
   require('./setting/setting-routes')(router);
   require('./vehicle/vehicle-routes')(router);
   require('./competition/competition-routes')(router);
+  require('./scoresheet-template/scoresheet-template-routes')(router);
 };
