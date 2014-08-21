@@ -2,22 +2,42 @@
 
 var competitionRepository = require('../competition/competition-repository');
 var userRepository = require('../user/user-repository');
+var vehicleRepository = require('../vehicle/vehicle-repository');
 var config = require('./config');
 var async = require('async');
 
+var convertConfigData = function (idDataCollection, idData, competitionConfig, userCollectionString, cb) {
+  idDataCollection.push(idData);
+
+  if (idDataCollection.length === competitionConfig[userCollectionString].length) {
+    competitionConfig[userCollectionString] = idDataCollection;
+    cb();
+  }
+};
+
+//TODO: Refactor names to what the really are! Before I forget and things get really confusing ;-)
 var loadUserIds = function (competitionConfig, userCollectionString) {
   return function (cb) {
-    competitionConfig[userCollectionString].forEach(function (userEmail) {
-      var userIds = [];
+    competitionConfig[userCollectionString].forEach(function (memberConfig) {
+      var ids = [];
 
-      userRepository.getByEmail(userEmail, function (err, user) {
+      var email = userCollectionString === 'judges' ? memberConfig : memberConfig.email;
+
+      userRepository.getByEmail(email, function (err, user) {
         if (err) { console.error(err); }
 
-        userIds.push(user.id);
+        if(userCollectionString === 'participants') {
+          vehicleRepository.getByUserIdAndLicensePlate(user.id, memberConfig.licencePlate, function (err, vehicle) {
+            if(err) { console.error(err); }
 
-        if (userIds.length === competitionConfig[userCollectionString].length) {
-          competitionConfig[userCollectionString] = userIds;
-          cb();
+            convertConfigData(ids, {userId: user.id, vehicleId: vehicle.id}, competitionConfig, userCollectionString, cb);
+          });
+        }
+        else if(userCollectionString === 'judges') {
+          convertConfigData(ids, user.id, competitionConfig, userCollectionString, cb);
+        }
+        else {
+          console.error('userCollectionString should a propery value. Give value is: ' + userCollectionString + '.');
         }
       });
     });
@@ -42,7 +62,8 @@ var competitionSeed = {};
 
 competitionSeed.seed = function (cb) {
   config.competitions.forEach(function (competitionConfig) {
-    async.parallel([loadUserIds(competitionConfig, 'participants'), loadUserIds(competitionConfig, 'judges')], function (err) {
+    //TODO: Make it work with configurable categories too.
+    async.parallel([loadUserIds(competitionConfig.categories[0], 'participants'), loadUserIds(competitionConfig.categories[0], 'judges')], function (err) {
       if (err) {
         console.error(err);
       }

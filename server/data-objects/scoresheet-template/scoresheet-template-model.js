@@ -4,16 +4,14 @@ var mongoose = require('mongoose');
 
 var ScoresheetTemplateSchema = new mongoose.Schema({
   title: String,
-  scoresheetTemplateData: {
     sections: [{
         title: String,
         inputs: [{
             title: String,
-            type: String,
-            options: [String]
+            inputType: String,
+            selectOptions: [mongoose.Schema.Mixed]
           }]
       }]
-  }
 });
 
 var ScoresheetTemplate = mongoose.model('ScoresheetTemplate', ScoresheetTemplateSchema);

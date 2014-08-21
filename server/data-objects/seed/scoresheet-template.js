@@ -1,55 +1,24 @@
 'use strict';
 
-var competitionRepository = require('../competition/competition-repository');
-var userRepository = require('../user/user-repository');
+var scoresheetTemplateRepository = require('../scoresheet-template/scoresheet-template-repository');
 var config = require('./config');
-var async = require('async');
 
-var loadUserIds = function (competitionConfig, userCollectionString) {
-  return function (cb) {
-    competitionConfig[userCollectionString].forEach(function (userEmail) {
-      var userIds = [];
+var scoresheetTemplateSeed = {};
 
-      userRepository.getByEmail(userEmail, function (err, user) {
-        if (err) { console.error(err); }
+scoresheetTemplateSeed.seed = function (cb) {
+  var saveCount = 0;
 
-        userIds.push(user.id);
+  config.scoresheetTemplates.forEach(function (scoresheetTemplateConfig) {
+    scoresheetTemplateRepository.save(scoresheetTemplateConfig, function (err) {
+      saveCount++; // TODO: Check other seeds so they add to count before error-returning. Otherwise we might get a memory leak.
 
-        if (userIds.length === competitionConfig[userCollectionString].length) {
-          competitionConfig[userCollectionString] = userIds;
-          cb();
-        }
-      });
-    });
-  };
-};
+      if(err) { return console.error(err); }
 
-var competitionsCount = 0;
-
-var saveCompetition = function (competitionInput, cb) {
-  competitionRepository.save(competitionInput, function (err, data) {
-    if (err) { console.error(err); }
-
-    competitionsCount++;
-
-    if (competitionsCount === config.competitions.length) {
-      cb();
-    }
-  });
-};
-
-var competitionSeed = {};
-
-competitionSeed.seed = function (cb) {
-  config.competitions.forEach(function (competitionConfig) {
-    async.parallel([loadUserIds(competitionConfig, 'participants'), loadUserIds(competitionConfig, 'judges')], function (err) {
-      if (err) {
-        console.error(err);
+      if(saveCount === config.scoresheetTemplates.length) {
+        cb();
       }
-
-      saveCompetition(competitionConfig, cb);
     });
   });
 };
 
-module.exports = competitionSeed;
+module.exports = scoresheetTemplateSeed;

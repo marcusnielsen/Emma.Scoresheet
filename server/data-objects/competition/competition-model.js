@@ -5,13 +5,16 @@ var Schema = mongoose.Schema;
 
 var CompetitionSchema = new mongoose.Schema({
   title : String,
-  judges: [{
-    type: Schema.ObjectId, ref: 'UserSchema'
-  }],
-  participants: [{
-    type: Schema.ObjectId, ref: 'UserSchema'
-  }],
-  startDate: Date // TODO: Make sure Date shouldn't be some other type.
+  startDate: Date,
+  categories: [
+    {
+      title: String,
+      judges: [{ type: Schema.ObjectId, ref: 'UserSchema' }],
+      participants: [{
+          userId: { type: Schema.ObjectId, ref: 'UserSchema' },
+          vehicleId: { type: Schema.ObjectId, ref: 'UserSchema' }
+        }]
+    }]
 });
 
 var Competition = mongoose.model('Competition', CompetitionSchema);

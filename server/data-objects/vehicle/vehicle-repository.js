@@ -19,7 +19,7 @@ vehicleRepository.getAllByUserId = function (userIdInput, cb) {
 };
 
 vehicleRepository.getByUserIdAndLicensePlate = function(userIdInput, licensePlateInput, cb) {
-  Vehicle.findOne({userId: userIdInput, licensePlates: licensePlateInput}, modelHelper.onFind(cb));
+  Vehicle.findOne({userId: userIdInput, 'vehicleCollection.licensePlates': licensePlateInput}, modelHelper.onFind(cb));
 };
 
 module.exports = vehicleRepository;
