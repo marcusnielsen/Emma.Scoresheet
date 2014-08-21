@@ -14,4 +14,8 @@ scoresheetTemplateRepository.getById = function (scoresheetTemplateId, cb) {
   ScoresheetTemplate.findOne({id: scoresheetTemplateId}, modelHelper.onFind(cb));
 };
 
+scoresheetTemplateRepository.getAll = function (cb) {
+  ScoresheetTemplate.find({}, modelHelper.onFind(cb));
+};
+
 module.exports = scoresheetTemplateRepository;
