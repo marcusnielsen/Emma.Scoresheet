@@ -12,5 +12,6 @@
   "$EMAIL": "Email",
   "$USER": "User",
   "$VEHICLES": "Vehicles",
-  "$COMPETITIONS": "Competitions"
+  "$COMPETITIONS": "Competitions",
+  "$SCORESHEET_TEMPLATES": "Scoresheet templates"
 }

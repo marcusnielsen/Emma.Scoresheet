@@ -12,5 +12,6 @@
   "$EMAIL": "E-post",
   "$USER": "Användare",
   "$VEHICLES": "Fordon",
-  "$COMPETITIONS": "Tävlingar"
+  "$COMPETITIONS": "Tävlingar",
+  "$SCORESHEET_TEMPLATES": "Poängformulärsmallar"
 }

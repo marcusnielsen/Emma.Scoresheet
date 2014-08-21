@@ -15,35 +15,32 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
 
     $urlRouterProvider.otherwise('/');
 
+    var stateNames = [
+      'setting',
+      'login',
+      'user',
+      'vehicle',
+      'competition',
+      'scoresheet-template'
+    ];
+
+    stateNames.forEach(function (stateName) {
+      var pascalCasedStateName = stateName.charAt(0).toUpperCase() + stateName.slice(1);
+      pascalCasedStateName = pascalCasedStateName.replace(/-([a-z])/g, function (g) {
+        return g[1].toUpperCase();
+      });
+
+      $stateProvider.state(stateName, {
+        url: '/' + stateName,
+        templateUrl: 'dist/html/page-components/' + stateName + '/' + stateName + '.html',
+        controller: 'mn' + pascalCasedStateName + 'Controller'
+      });
+    });
+
     $stateProvider
       .state('home', {
         url: '/',
         templateUrl: 'dist/html/page-components/home/home.html',
         controller: 'mnHomeController'
-      })
-      .state('setting', {
-        url: '/setting',
-        templateUrl: 'dist/html/page-components/setting/setting.html',
-        controller: 'mnSettingController'
-      })
-      .state('login', {
-        url: '/login',
-        templateUrl: 'dist/html/page-components/login/login.html',
-        controller: 'mnLoginController'
-      })
-      .state('user', {
-        url: '/user',
-        templateUrl: 'dist/html/page-components/user/user.html',
-        controller: 'mnUserController'
-      })
-      .state('vehicle', {
-        url: '/vehicle',
-        templateUrl: 'dist/html/page-components/vehicle/vehicle.html',
-        controller: 'mnVehicleController'
-      })
-      .state('competition', {
-        url: '/competition',
-        templateUrl: 'dist/html/page-components/competition/competition.html',
-        controller: 'mnCompetitionController'
       });
   }];

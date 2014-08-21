@@ -4,15 +4,14 @@ var _ = require('lodash');
 
 //TODO: Refactor! Too much functionality in the controller.
 
-module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSettingFactory', 'mnScoresheetFactory',
-  function ($rootScope, $scope, $translate, mnThemeFactory, mnSettingFactory, mnScoresheetFactory) {
+module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSettingFactory',
+  function ($rootScope, $scope, $translate, mnThemeFactory, mnSettingFactory) {
   $scope.app = {
     githubUrl: 'https://github.com/marcusnielsen/emma-scoresheet'
   };
 
   $scope.theme = mnThemeFactory;
   $scope.translate = $translate;
-  $scope.scoresheet = mnScoresheetFactory;
 
     $rootScope.$on('setting-changed', function () {
     var lclSetting = _.find(mnSettingFactory.settingCollection, function (setting) {

@@ -5,7 +5,7 @@ var scoresheetTemplateRepository = require('./scoresheet-template-repository');
 var authenticate = require('../../components/passport/authenticate');
 
 module.exports = function (router) {
-  router.route('/scoresheetTemplates')
+  router.route('/scoresheet-templates')
     .get(routeHelper.onGetAll(scoresheetTemplateRepository))
     .post(authenticate, routeHelper.onSave(scoresheetTemplateRepository));
 };

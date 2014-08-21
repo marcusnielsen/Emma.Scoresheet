@@ -5,31 +5,20 @@ require('angular-ui-bootstrap/ui-bootstrap');
 require('angular-translate/angular-translate');
 require('angular-translate-loader-static/angular-translate-loader-static-files');
 var uiRouterName = require('angular-ui-router');
-var theme = require('./components/theme');
-var menu = require('./components/menu');
-var home = require('./page-components/home');
-var competition = require('./page-components/competition');
-var login = require('./page-components/login');
-var user = require('./page-components/user');
-var vehicle = require('./page-components/vehicle');
-var mnInput = require('./components/mnInput');
-var mnSetting = require('./page-components/setting');
-var mnScoresheet = require('./components/mnScoresheet');
 
 var app = angular.module('app', [
   uiRouterName,
   'ui.bootstrap',
   'pascalprecht.translate',
-  theme.name,
-  menu.name,
-  home.name,
-  competition.name,
-  login.name,
-  user.name,
-  vehicle.name,
-  mnInput.name,
-  mnSetting.name,
-  mnScoresheet.name
+  require('./components/theme').name,
+  require('./components/menu').name,
+  require('./page-components/home').name,
+  require('./page-components/competition').name,
+  require('./page-components/login').name,
+  require('./page-components/user').name,
+  require('./page-components/vehicle').name,
+  require('./page-components/setting').name,
+  require('./page-components/scoresheet-template').name
 ]);
 
 app.constant('version', require('../package.json').version);

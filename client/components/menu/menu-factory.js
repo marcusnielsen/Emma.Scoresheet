@@ -9,7 +9,8 @@ module.exports = ['$state', function ($state) {
       {title: '$SETTINGS', sref: 'setting'},
       {title: '$USER', sref: 'user'},
       {title: '$VEHICLES', sref: 'vehicle'},
-      {title: '$COMPETITIONS', sref: 'competition'}
+      {title: '$COMPETITIONS', sref: 'competition'},
+      {title: '$SCORESHEET_TEMPLATES', sref: 'scoresheet-template'}
     ]
   };
 
