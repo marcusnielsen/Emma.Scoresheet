@@ -11,7 +11,6 @@ var cookieParser = require('cookie-parser');
 var path = require('path');
 var livereload = require('connect-livereload');
 var session = require('express-session');
-var flash = require('connect-flash');
 
 module.exports = function (config) {
   var env = app.get('env');
@@ -31,7 +30,6 @@ module.exports = function (config) {
   }));
 
   var passport = require('../passport')(app);
-  app.use(flash());
 
   // TODO: Only use this for development server.
   if(config.connectLiveReload) {

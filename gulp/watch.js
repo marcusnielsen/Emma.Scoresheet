@@ -37,6 +37,8 @@ gulp.task('watch', function () {
   nodemon({ script: config.nodemon.start, ext: config.nodemon.ext, watch: config.nodemon.source })
     .on('restart', function () {
       console.log('Server restarted!');
+      //TODO: Fix the connection err refused.
+      // livereload.changed();
     });
 
   livereload.listen();
