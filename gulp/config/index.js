@@ -19,8 +19,9 @@ var config = {
     source: './client/**/*.html',
     dest: './dist/html'
   },
-  less: {
-    source: './client/**/*.less',
+  css: {
+    lessSource: './client/**/*.less',
+    cssSource: './client/**/*.css',
     dest: './dist/css',
     sourcemaps: './maps'
   },

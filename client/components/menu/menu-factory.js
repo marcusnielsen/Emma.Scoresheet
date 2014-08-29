@@ -3,6 +3,7 @@
 module.exports = ['$state', function ($state) {
   var factory = {
     brandMenuItem: {title: 'EMMA', sref: 'home'},
+    //TODO: These links should be displayed according to the users group policy.
     navigationItems: [
       {title: '$HOME', sref: 'home'},
       {title: '$LOGIN', sref: 'login'},

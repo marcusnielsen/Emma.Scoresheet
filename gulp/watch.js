@@ -30,7 +30,11 @@ gulp.task('watch', function () {
     gulp.start('moveLocalization');
   });
 
-  gulpWatch({glob: config.less.source}, function () {
+  gulpWatch({glob: config.css.cssSource}, function () {
+    gulp.start('moveCss');
+  });
+
+  gulpWatch({glob: config.css.lessSource}, function () {
     gulp.start('less');
   });
 

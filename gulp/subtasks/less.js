@@ -8,11 +8,11 @@ var gulp = require('gulp');
 var livereload = require('gulp-livereload');
 
 gulp.task('less', function () {
-  return gulp.src(config.less.source)
+  return gulp.src(config.css.lessSource)
     .pipe(sourcemaps.init())
     .pipe(less())
     .pipe(csso())
-    .pipe(sourcemaps.write(config.less.sourcemaps))
-    .pipe(gulp.dest(config.less.dest))
+    .pipe(sourcemaps.write(config.css.sourcemaps))
+    .pipe(gulp.dest(config.css.dest))
     .pipe(livereload({auto: false}));
 });
