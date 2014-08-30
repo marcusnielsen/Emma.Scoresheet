@@ -1,6 +1,8 @@
 'use strict';
 
 module.exports = ['$rootScope', '$state', 'mnUserFactory', function ($rootScope, $state, mnUserFactory) {
+  var gravatar = require('gravatar'); //TODO: Continue here.
+
   var factory = {
     brandMenuItem: {title: 'EMMA', sref: 'home'},
     //TODO: These links should be displayed according to the users group policy.
@@ -27,11 +29,17 @@ module.exports = ['$rootScope', '$state', 'mnUserFactory', function ($rootScope,
     factory.userLoginTemplate = 'dist/html/components/menu/user.html';
   });
 
+  factory.getUserData = function () {
+    return mnUserFactory.userData;
+  };
+
   $rootScope.$on('login-logged-out', function () {
     factory.userLoginTemplate = 'dist/html/components/menu/login-or-register.html';
   });
 
-  factory.userData = mnUserFactory.userData;
+  factory.getGravatarUrl = function () {
+    return gravatar.url(factory.getUserData().email, {s: 40});
+  };
 
   // TODO: Check if isCollapsed is the wrong word. Should it be isExpanded?
   // For compressed menu when viewing with a small screen.

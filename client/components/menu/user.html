@@ -1,6 +1,7 @@
 <li data-ng-class="{active: menu.isActive(menu.userSref)}">
   <a href="" data-ui-sref="{{menu.userSref}}">
-    <!-- TODO: User avatar from gravatar via email and anchor text should be the user's name. -->
-    <span data-translate="$USER"></span>
+    <img class="img-circle" data-ng-src="{{menu.getGravatarUrl()}}">
+    <span data-ng-if="menu.getUserData().name" data-ng-bind="menu.getUserData().name"></span>
+    <span data-ng-if="!menu.getUserData().name" data-ng-bind="menu.getUserData().email"></span>
   </a>
 </li>

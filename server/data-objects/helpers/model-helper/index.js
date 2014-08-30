@@ -3,11 +3,12 @@
 var modelHelper = {};
 
 modelHelper.onSave = function (modelItem, cb) {
-  var saveCallback = function (err) {
+  // TODO: Filter what is returned to the client somewhere in the pipeline.
+  var saveCallback = function (err, item, numberAffected) {
     if (err) {
       cb(err);
     }
-    cb(null, { id: modelItem.id });
+    cb(null, item);
   };
 
   return saveCallback;
