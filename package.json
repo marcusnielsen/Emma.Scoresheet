@@ -41,6 +41,7 @@
     "del": "^0.1.1",
     "express": "^4.6.1",
     "express-session": "^1.7.2",
+    "gravatar": "^1.0.6",
     "gulp": "^3.8.6",
     "gulp-csso": "^0.2.9",
     "gulp-htmlmin": "^0.1.3",
