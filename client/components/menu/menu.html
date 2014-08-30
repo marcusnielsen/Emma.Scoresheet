@@ -10,7 +10,7 @@
             <a href="" data-ui-sref="{{menu.brandMenuItem.sref}}" class="navbar-brand"
                data-ng-bind="menu.brandMenuItem.title"></a>
         </div>
-        <nav class="navbar-collapse" data-ng-class="menu.isCollapsed ? 'collapse' : 'in'" role="navigation">
+        <nav class="navbar-collapse" data-ng-class="menu.isExpanded ? 'collapse' : 'in'" role="navigation">
             <ul class="nav navbar-nav">
                 <li data-ng-class="{active: menu.isActive(menuItem.sref)}"
                     data-ng-repeat="menuItem in menu.navigationItems">
@@ -19,6 +19,8 @@
                     </a>
                 </li>
             </ul>
+          <ul data-ng-include="menu.userLoginTemplate" class="nav navbar-nav navbar-right">
+          </ul>
         </nav>
     </div>
 </nav>
