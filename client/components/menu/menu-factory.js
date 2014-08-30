@@ -38,7 +38,7 @@ module.exports = ['$rootScope', '$state', 'mnUserFactory', function ($rootScope,
   });
 
   factory.getGravatarUrl = function () {
-    return gravatar.url(factory.getUserData().email, {s: 40});
+    return gravatar.url(factory.getUserData().email, {s: 18});
   };
 
   // TODO: Check if isCollapsed is the wrong word. Should it be isExpanded?
