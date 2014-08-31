@@ -5,12 +5,15 @@ var _ = require('lodash');
 module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, $http, mnUserFactory) {
   var setting = {};
 
-  setting.settingCollection = '';
+  setting.settingCollection = [];
 
   setting.loadSettings = function () {
     if(!mnUserFactory.userData.id) { return console.error('user.id is not set.'); }
 
     return $http.get('api/setting/' + mnUserFactory.userData.id).then(function (res) {
+
+      if(_.isEmpty(res.data)) { return; }
+
       setting.settingCollection = res.data.settingCollection;
       $rootScope.$emit('setting-changed');
     });
@@ -33,8 +36,15 @@ module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, 
     if(!mnUserFactory.userData.id) { return; }
 
     var newSetting = args;
+
     var currentSetting = _.find(setting.settingCollection, {'name': newSetting.name});
-    currentSetting.value = newSetting.value;
+
+    if(!currentSetting) {
+      setting.settingCollection.push(newSetting);
+    }
+    else {
+      currentSetting.value = newSetting.value;
+    }
   });
 
   return setting;

@@ -11,7 +11,7 @@ module.exports = ['$rootScope', '$http', function ($rootScope, $http) {
 
   loginFactory.register = function () {
     $http.post('api/users', loginFactory.loginData).then(function (res) {
-      onLoggedIn(res.data);
+      loginFactory.login();
     });
   };
 

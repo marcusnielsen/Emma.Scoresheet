@@ -6,12 +6,9 @@ var passport = require('passport');
 module.exports = function (router) {
   //TODO: Change to '/user' or other routes to plural form.
   router.route('/users')
-    .post(function (req, res) {
+    .post(function (req, res, next) {
       userRepository.save(req.body, function (err, data) {
-        if (err) {
-          console.error(err);
-          return;
-        }
+        if(err) { return console.error(err); }
 
         res.json(data);
       });

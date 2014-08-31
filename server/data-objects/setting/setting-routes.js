@@ -9,7 +9,12 @@ module.exports = function (router) {
       settingRepository.get(req.user.id, function (err, setting) {
         if(err){ return console.error(err); }
 
-        res.json(setting);
+        if(!setting) {
+          res.json([]);
+        }
+        else {
+          res.json(setting);
+        }
       });
     })
     .post(authenticate, function (req, res) {
