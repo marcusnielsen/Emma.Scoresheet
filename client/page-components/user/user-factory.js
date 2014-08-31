@@ -1,5 +1,7 @@
 'use strict';
 
+var gravatar = require('gravatar');
+
 module.exports = ['$rootScope', function ($rootScope) {
   var userFactory = {};
 
@@ -13,6 +15,10 @@ module.exports = ['$rootScope', function ($rootScope) {
 
     $rootScope.$emit('user-loaded', userFactory.userData);
   });
+
+  userFactory.getUserImage = function (pixelSize) {
+    return gravatar.url(userFactory.userData.email, {s: pixelSize});
+  };
 
   return userFactory;
 }];

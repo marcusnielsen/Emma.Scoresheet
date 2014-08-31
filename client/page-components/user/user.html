@@ -1,5 +1,10 @@
+<!-- TODO: Add logout link -->
+
 <section class="page-header">
-  <h1 data-ng-bind="user.userData.name"></h1>
+  <h1>
+    <img class="img-circle" style="margin-top: -10px; margin-bottom: -10px" data-ng-src="{{user.getUserImage(100)}}">
+    <span data-ng-bind="user.userData.name">TEST</span>
+  </h1>
 </section>
 
 <section class="row">
