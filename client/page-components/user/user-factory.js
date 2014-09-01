@@ -5,6 +5,13 @@ var gravatar = require('gravatar');
 module.exports = ['$rootScope', function ($rootScope) {
   var userFactory = {};
 
+  userFactory.navigationItems = [
+    {title: '$USER', sref: 'user'},
+    {title: '$VEHICLES', sref: 'user.vehicle'},
+    {title: '$SETTINGS', sref: 'user.setting'},
+    {title: '$COMPETITIONS', sref: 'user.competition'}
+  ];
+
   userFactory.userData = {};
 
   $rootScope.$on('login-logged-in', function (event, userData) {

@@ -1,5 +1,16 @@
 <!-- TODO: Add logout link -->
 
+<nav>
+  <ul class="nav nav-pills">
+    <li data-ng-class="{active: state.includes(menuItem.sref)}"
+        data-ng-repeat="menuItem in user.navigationItems">
+      <a href="" data-ui-sref="{{menuItem.sref}}">
+        <span data-translate="{{menuItem.title}}"></span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
 <section class="page-header">
   <h1>
     <img class="img-circle" data-ng-src="{{user.getUserImage(100)}}">
@@ -7,11 +18,13 @@
   </h1>
 </section>
 
-<section class="row">
-  <div class="col-xs-6 col-md-8">
+<div class="row">
+  <section class="col-xs-12 col-md-6">
     <dl>
       <dt data-translate="$EMAIL"></dt>
       <dd data-ng-bind="user.userData.email"></dd>
     </dl>
-  </div>
-</section>
+  </section>
+</div>
+
+<ui-view></ui-view>

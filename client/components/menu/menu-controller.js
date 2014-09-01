@@ -1,6 +1,7 @@
 'use strict';
 
-module.exports = ['$scope', 'mnMenuFactory', 'mnUserFactory', function ($scope, mnMenuFactory, mnUserFactory) {
+module.exports = ['$scope', '$state', 'mnMenuFactory', 'mnUserFactory', function ($scope, $state, mnMenuFactory, mnUserFactory) {
   $scope.menu = mnMenuFactory;
   $scope.user = mnUserFactory;
+  $scope.state = $state;
 }];

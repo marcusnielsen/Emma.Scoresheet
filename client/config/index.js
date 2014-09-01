@@ -15,27 +15,15 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
 
     $urlRouterProvider.otherwise('/');
 
-    var stateNames = [
-      'setting',
-      'login',
-      'user',
-      'vehicle',
-      'competition',
-      'scoresheet-template'
+    var stateDataCollection = [
+      {name: 'login', parent: ''},
+      {name: 'scoresheet-template', parent: ''},
+      {name: 'competition', parent: ''},
+      {name: 'user', parent: ''},
+      {name: 'setting', parent: 'user.'},
+      {name: 'vehicle', parent: 'user.'},
+      {name: 'competition', parent: 'user.'}
     ];
-
-    stateNames.forEach(function (stateName) {
-      var pascalCasedStateName = stateName.charAt(0).toUpperCase() + stateName.slice(1);
-      pascalCasedStateName = pascalCasedStateName.replace(/-([a-z])/g, function (g) {
-        return g[1].toUpperCase();
-      });
-
-      $stateProvider.state(stateName, {
-        url: '/' + stateName,
-        templateUrl: 'dist/html/page-components/' + stateName + '/' + stateName + '.html',
-        controller: 'mn' + pascalCasedStateName + 'Controller'
-      });
-    });
 
     $stateProvider
       .state('home', {
@@ -43,4 +31,17 @@ module.exports = ['$compileProvider', '$translateProvider', '$stateProvider', '$
         templateUrl: 'dist/html/page-components/home/home.html',
         controller: 'mnHomeController'
       });
+
+    stateDataCollection.forEach(function (stateData) {
+      var pascalCasedStateName = stateData.name.charAt(0).toUpperCase() + stateData.name.slice(1);
+      pascalCasedStateName = pascalCasedStateName.replace(/-([a-z])/g, function (g) {
+        return g[1].toUpperCase();
+      });
+
+      $stateProvider.state(stateData.parent + stateData.name, {
+        url: '/' + stateData.name,
+        templateUrl: 'dist/html/page-components/' + stateData.name + '/' + stateData.name + '.html',
+        controller: 'mn' + pascalCasedStateName + 'Controller'
+      });
+    });
   }];
