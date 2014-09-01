@@ -1,8 +1,3 @@
-<li data-ng-class="{active: menu.isActive(menu.userSref)}">
-  <a href="" data-ui-sref="{{menu.userSref}}">
-    <!-- TODO: Refactor style to less/css or find a better way to override the nav margin via bootstrap classes. -->
-    <img class="img-circle menu-img" data-ng-src="{{user.getUserImage(35)}}">
-    <span data-ng-if="user.userData.name" data-ng-bind="user.userData.name"></span>
-    <span data-ng-if="!user.userData.name" data-ng-bind="user.userData.email"></span>
-  </a>
-</li>
+<img class="img-circle menu-img" data-ng-src="{{user.getUserImage(35)}}">
+<span data-ng-if="user.userData.name" data-ng-bind="user.userData.name"></span>
+<span data-ng-if="!user.userData.name" data-ng-bind="user.userData.email"></span>

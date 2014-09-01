@@ -1,36 +1,29 @@
 'use strict';
 
-module.exports = ['$rootScope', '$state', 'mnUserFactory', function ($rootScope) {
+var _ = require('lodash');
 
-  var factory = {
-    brandMenuItem: {title: 'EMMA', sref: 'home'},
-    //TODO: These links should be displayed according to the users group policy.
-    navigationItems: [
-      {title: '$HOME', sref: 'home'},
-      {title: '$COMPETITIONS', sref: 'competition'},
-      {title: '$SCORESHEET_TEMPLATES', sref: 'scoresheet-template'}
-    ]
+module.exports = ['$rootScope', 'mnMenuTreeValue', function ($rootScope, mnMenuTreeValue) {
+  var setRightMenu = function (sref) {
+    var loginOption = _.find(mnMenuTreeValue.primaryMenu.rightMenu.options, {sref: sref});
+    mnMenuTreeValue.primaryMenu.rightMenu.currentOption = loginOption;
   };
 
-  factory.loginSref = 'login';
-  factory.userSref = 'user';
+  setRightMenu('login');
 
-  // TODO: Refactor dist/html/components/menu/ here and in the directive.
-  factory.userLoginTemplate = 'dist/html/components/menu/login-or-register.html';
+  var factory = {};
+
+  factory.menuTree = mnMenuTreeValue;
 
   $rootScope.$on('login-logged-in', function () {
-    factory.userLoginTemplate = 'dist/html/components/menu/user.html';
+    setRightMenu('user');
   });
 
   $rootScope.$on('login-logged-out', function () {
-    factory.userLoginTemplate = 'dist/html/components/menu/login-or-register.html';
+    setRightMenu('login');
   });
 
-  // TODO: Check if isCollapsed is the wrong word. Should it be isExpanded?
   // For compressed menu when viewing with a small screen.
   factory.isExpanded = true;
-
-
 
   return factory;
 }];

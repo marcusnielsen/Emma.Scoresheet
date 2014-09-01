@@ -7,19 +7,23 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
             </button>
-            <a href="" data-ui-sref="{{menu.brandMenuItem.sref}}" class="navbar-brand"
-               data-ng-bind="menu.brandMenuItem.title"></a>
+            <a href="" data-ui-sref="{{menu.menuTree.primaryMenu.brand.sref}}" class="navbar-brand"
+               data-ng-bind="menu.menuTree.primaryMenu.brand.name"></a>
         </div>
         <nav class="navbar-collapse" data-ng-class="menu.isExpanded ? 'collapse' : 'in'" role="navigation">
             <ul class="nav navbar-nav">
                 <li data-ng-class="{active: state.includes(menuItem.sref)}"
-                    data-ng-repeat="menuItem in menu.navigationItems">
+                    data-ng-repeat="menuItem in menu.menuTree.primaryMenu.menuItems">
                     <a href="" data-ui-sref="{{menuItem.sref}}">
-                        <span data-translate="{{menuItem.title}}"></span>
+                        <span data-translate="{{menuItem.name}}"></span>
                     </a>
                 </li>
             </ul>
-          <ul data-ng-include="menu.userLoginTemplate" class="nav navbar-nav navbar-right">
+          <ul class="nav navbar-nav navbar-right">
+            <li data-ng-class="{active: state.includes(menu.menuTree.primaryMenu.rightMenu.currentOption.sref)}">
+              <a href="" data-ui-sref="{{menu.menuTree.primaryMenu.rightMenu.currentOption.sref}}" data-ng-include="menu.menuTree.primaryMenu.rightMenu.currentOption.templateUrl">
+              </a>
+            </li>
           </ul>
         </nav>
     </div>
