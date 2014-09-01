@@ -32,12 +32,8 @@ module.exports = ['$rootScope', '$http', 'mnSettingFactory', function ($rootScop
     return factory.selected.name === themeName;
   };
 
-  $rootScope.$on('setting-changed', function (event, args) {
-    var themeSetting = _.find(mnSettingFactory.settingCollection, function (setting) {
-      return setting.name === 'themeName';
-    });
-
-    factory.setThemeByName(themeSetting.value);
+  $rootScope.$on('setting-changed-themeName', function (event, settingValue) {
+    factory.setThemeByName(settingValue);
   });
 
   return factory;

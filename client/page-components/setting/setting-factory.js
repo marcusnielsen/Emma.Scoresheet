@@ -15,16 +15,18 @@ module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, 
       if(_.isEmpty(res.data)) { return; }
 
       setting.settingCollection = res.data.settingCollection;
-      $rootScope.$emit('setting-changed');
+
+      _.forEach(setting.settingCollection, function (setting, index) {
+        $rootScope.$emit('setting-changed-' + setting.name, setting.value);
+      });
     });
   };
 
   setting.save = function () {
     if(!mnUserFactory.userData.id) { return console.error('user.id is not set.'); }
 
-    $http.post('api/setting/' + mnUserFactory.userData.id, setting.settingCollection).then(function (res) {
-      //TODO: Replace with proper handling.
-      console.log('Setting saved.');
+    $http.post('api/setting/' + mnUserFactory.userData.id, setting.settingCollection).then(function () {
+
     });
   };
 

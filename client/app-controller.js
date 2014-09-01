@@ -6,19 +6,16 @@ var _ = require('lodash');
 
 module.exports = ['$rootScope', '$scope', '$translate', 'mnThemeFactory', 'mnSettingFactory',
   function ($rootScope, $scope, $translate, mnThemeFactory, mnSettingFactory) {
-  $scope.app = {
-    githubUrl: 'https://github.com/marcusnielsen/emma-scoresheet'
-  };
+    $scope.app = {
+      githubUrl: 'https://github.com/marcusnielsen/emma-scoresheet'
+    };
 
-  $scope.theme = mnThemeFactory;
-  $scope.translate = $translate;
+    $scope.theme = mnThemeFactory;
+    $scope.translate = $translate;
 
-    $rootScope.$on('setting-changed', function () {
-    var lclSetting = _.find(mnSettingFactory.settingCollection, function (setting) {
-      return setting.name === 'lcl';
-    });
+    $rootScope.$on('setting-changed-lcl', function (event, settingValue) {
 
-    $translate.use(lclSetting.value);
+    $translate.use(settingValue);
   });
 
   //TODO: Avoid calling the first time since that is the initialization and not an update of the setting
