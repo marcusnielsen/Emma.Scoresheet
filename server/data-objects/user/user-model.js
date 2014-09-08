@@ -2,6 +2,7 @@
 
 var bcrypt = require('bcrypt-nodejs');
 var mongoose = require('mongoose');
+var md5 = require('MD5');
 
 var UserSchema = new mongoose.Schema({
   name: String,
@@ -46,6 +47,24 @@ UserSchema.methods.verifyPassword = function (password, cb) {
     cb(null, isMatch);
   });
 };
+
+UserSchema.virtual('publicClientData')
+  .get(function () {
+    return {
+      name: this.name,
+      role: this.role,
+      emailHash: md5(this.email)
+    };
+  });
+
+UserSchema.virtual('personalClientData')
+  .get(function () {
+    return {
+      name: this.name,
+      role: this.role,
+      email: this.email
+    };
+  });
 
 var User = mongoose.model('User', UserSchema);
 

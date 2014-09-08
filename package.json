@@ -29,6 +29,7 @@
     "angular-translate-loader-static": "angular-translate/bower-angular-translate-loader-static-files"
   },
   "dependencies": {
+    "MD5": "^1.2.1",
     "async": "^0.9.0",
     "bcrypt-nodejs": "0.0.3",
     "body-parser": "^1.4.3",
@@ -41,7 +42,6 @@
     "del": "^0.1.1",
     "express": "^4.6.1",
     "express-session": "^1.7.2",
-    "gravatar": "^1.0.6",
     "gulp": "^3.8.6",
     "gulp-concat": "^2.3.4",
     "gulp-csso": "^0.2.9",

@@ -1,0 +1,10 @@
+<nav>
+  <ul class="nav nav-pills">
+    <li data-ng-class="{active: state.includes(menuItem.sref)}"
+        data-ng-repeat="menuItem in secondaryMenu.getCurrentMenuTree(parentSref).menuItems">
+      <a href="" data-ui-sref="{{menuItem.sref}}">
+        <span data-translate="{{menuItem.name}}"></span>
+      </a>
+    </li>
+  </ul>
+</nav>

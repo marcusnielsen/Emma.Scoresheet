@@ -17,7 +17,7 @@ module.exports = [
     name: 'scoresheet-template',
     url: '/scoresheet-template',
     templateUrl: 'dist/html/page-components/scoresheet-template/scoresheet-template.html',
-    controller: 'mnScoresheet-templateController'
+    controller: 'mnScoresheetTemplateController'
   },
   {
     name: 'competition',

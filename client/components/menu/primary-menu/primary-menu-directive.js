@@ -5,7 +5,7 @@ module.exports = [function () {
     replace: true,
     restrict: 'EA',
     scope: true,
-    templateUrl: 'dist/html/components/menu/menu.html',
-    controller: 'mnMenuController'
+    templateUrl: 'dist/html/components/menu/primary-menu/primary-menu.html',
+    controller: 'mnPrimaryMenuController'
   };
 }];

@@ -20,7 +20,7 @@ module.exports = ['$rootScope', function ($rootScope) {
     // TODO: Remove once the server sends the correct data.
     userFactory.userData.id = userFactory.userData._id;
 
-    $rootScope.$emit('user-loaded', userFactory.userData);
+    $rootScope.$emit('user-loaded', { name: userData.name, imageUrl: userData.imageUrl } );
   });
 
   userFactory.getUserImage = function (pixelSize) {

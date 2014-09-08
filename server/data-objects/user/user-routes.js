@@ -6,7 +6,7 @@ var passport = require('passport');
 module.exports = function (router) {
   //TODO: Change to '/user' or other routes to plural form.
   router.route('/users')
-    .post(function (req, res, next) {
+    .post(function (req, res) {
       userRepository.save(req.body, function (err, data) {
         if(err) { return console.error(err); }
 
@@ -25,8 +25,7 @@ module.exports = function (router) {
           req.logIn(user, function(err) {
             if (err) { return next(err); }
 
-            //TODO: Send back the correct client data when done with testing stuff.
-            return res.json(req.user);
+            return res.json(req.user.privateClientData);
           });
         }
       )(req,res,next);
