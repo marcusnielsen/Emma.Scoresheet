@@ -22,18 +22,12 @@ Prerequisites
 * Node.js.
 * MongoDB.
 
-###NPM global packages
-* Express.
-* Gulp.
-* Browserify.
-* Napa.
-* Mocha.
-
 To install
 ----------
 * Install the prerequisites.
 * Git clone this repository.
 * Run npm install.
+* Start mongod process.
 * Start with 'node server/server.js' or with 'gulp watch' for development mode.
 
 About the code
