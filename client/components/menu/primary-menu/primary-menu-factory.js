@@ -14,13 +14,12 @@ module.exports = ['$rootScope', 'mnPrimaryMenuTreeValue', function ($rootScope, 
   var factory = {};
   factory.primaryMenuTree = mnPrimaryMenuTreeValue;
 
-  // TODO: Reuse a userData factory/value as a single source of truth.
   factory.userData = [];
 
   $rootScope.$on('user-loaded', function (event, userData) {
     setRightMenu('user');
     factory.userData = userData;
-    factory.userData.imageUrl = '//www.gravatar.com/' + userData.emailHash + '.json?d=mm&s=28';
+    factory.userData.imageUrl = '//www.gravatar.com/' + md5(userData.email) + '.json?d=mm&s=28';
   });
 
   $rootScope.$on('login-logged-out', function () {

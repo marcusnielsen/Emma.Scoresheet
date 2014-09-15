@@ -57,7 +57,7 @@ UserSchema.virtual('publicClientData')
     };
   });
 
-UserSchema.virtual('personalClientData')
+UserSchema.virtual('privateClientData')
   .get(function () {
     return {
       name: this.name,

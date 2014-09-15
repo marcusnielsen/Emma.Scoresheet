@@ -5,7 +5,6 @@ var User = require('./user-model');
 
 var userRepository = {};
 
-//TODO: Go through the entire register procedure. Lots of client side logical bugs as well.
 userRepository.save = function (userInput, cb) {
   var user = new User(userInput);
   user.save(modelHelper.onSave(userInput, cb));

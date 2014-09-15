@@ -12,15 +12,12 @@ module.exports = ['$rootScope', function ($rootScope) {
     {title: '$COMPETITIONS', sref: 'user.competition'}
   ];
 
-  userFactory.userData = {};
+  userFactory.userData = [];
 
   $rootScope.$on('login-logged-in', function (event, userData) {
     userFactory.userData = userData;
 
-    // TODO: Remove once the server sends the correct data.
-    userFactory.userData.id = userFactory.userData._id;
-
-    $rootScope.$emit('user-loaded', { name: userData.name, imageUrl: userData.imageUrl } );
+    $rootScope.$emit('user-loaded', userData );
   });
 
   userFactory.getUserImage = function (pixelSize) {

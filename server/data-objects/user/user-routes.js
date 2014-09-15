@@ -4,7 +4,7 @@ var userRepository = require('./user-repository');
 var passport = require('passport');
 
 module.exports = function (router) {
-  //TODO: Change to '/user' or other routes to plural form.
+  //TODO: Change other routes to plural form.
   router.route('/users')
     .post(function (req, res) {
       userRepository.save(req.body, function (err, data) {

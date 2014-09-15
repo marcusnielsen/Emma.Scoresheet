@@ -8,7 +8,7 @@ module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, 
   setting.settingCollection = [];
 
   setting.loadSettings = function () {
-    if(!mnUserFactory.userData.id) { return console.error('user.id is not set.'); }
+    if(!mnUserFactory.userData) { return console.error('userData is not set.'); }
 
     return $http.get('api/setting/' + mnUserFactory.userData.id).then(function (res) {
 
@@ -23,8 +23,9 @@ module.exports = ['$rootScope', '$http', 'mnUserFactory', function ($rootScope, 
   };
 
   setting.save = function () {
-    if(!mnUserFactory.userData.id) { return console.error('user.id is not set.'); }
+    if(!mnUserFactory.userData) { return console.error('userData is not set.'); }
 
+    //TODO: Don't let the API depend on user-id. Check via session (req.body) instead.
     $http.post('api/setting/' + mnUserFactory.userData.id, setting.settingCollection).then(function () {
 
     });
